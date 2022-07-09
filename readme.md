@@ -1,6 +1,8 @@
 # 每日Code学习
 代码用Go实现，思路来源主要包括
 * 代码随想录https://www.programmercarl.com/
+* 十大排序算法：https://www.runoob.com/w3cnote/ten-sorting-algorithm.html
+* 设计模式：https://github.com/mohuishou/go-design-pattern
 * 一些基本的数据结构
 
 每日是为了提醒自己学习！
