@@ -13,3 +13,4 @@
 * Greedy: 代码随想录的贪心系列
 * Sort: 个人准备的十大排序算法系列
 * LeetcodeSQL: 一个算法或一个SQL的程序
+* DesignPattern: 设计模式，主攻单例模式、工厂模式，其他简单学习
