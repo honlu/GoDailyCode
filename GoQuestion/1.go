@@ -2,6 +2,9 @@
 2022-9-16 by honlu
 question： 实现两个goroutine交替打印数字或字母
 涉及类型或函数等：channel、sync.WaitGroup、go func(){}、select
+
+解题思路：使用 channel 来控制打印的进度。使用两个 channel ，来分别控制数字和字母的打印序列，
+数字打印完成后通过 channel 通知字母打印, 字母打印完成后通知数字打印，然后周而复始的工作。
 */
 package main
 
@@ -23,7 +26,7 @@ func main() {
 				i++
 				fmt.Print(i)
 				i++
-				letter <- true // 通知字母打印
+				letter <- true // 通知打印字母的goroutine打印
 			}
 		}
 	}()
@@ -41,7 +44,7 @@ func main() {
 				i++
 				fmt.Print(string(i))
 				i++
-				number <- true // 通知数字打印
+				number <- true // 通知打印数字的goroutine打印
 			}
 		}
 	}(&wait)
