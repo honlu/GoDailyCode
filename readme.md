@@ -14,4 +14,4 @@
 - [] Sort: 个人准备的十大排序算法系列 [完成5个了]
 - [] LeetcodeOrSQL: 一个算法或一个SQL的程序[太懒的记了]
 - [] DesignPattern: 设计模式，主攻单例模式、工厂模式，其他简单学习[单例完成]
-- [] GoQueation: 并发或一些高级函数的使用[将一些常用函数用起来,1-6题目来源于interview-go(question)]
+- [] GoQueation: 并发或一些高级函数的使用[将一些常用函数用起来,1-7题目来源于interview-go(question)]

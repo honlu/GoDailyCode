@@ -18,7 +18,8 @@ func main() {
 	t := []rune(s) // string转为[]rune, 不能写成s = []rune(s)
 	l := len(t)
 	if l > 5 { // 这里为了测试，5000改为5
-		log.Panic("strings 超过5") // panic
+		// log.Panic("strings 超过5") // panic
+		log.Fatal("string超过5") // Fatal 打印日志后，os.Exit(1)退出程序
 	}
 	for i := 0; i < l/2; i++ {
 		t[i], t[l-1-i] = t[l-1-i], t[i]
