@@ -6,7 +6,7 @@ day:2022-7-13
 还没来得及注释和运行测试
 */
 
-// 在递归中传递下一个数字
+// 在递归中传递下一个数字.与2.go代码不同
 func combinationSum(candidates []int, target int) [][]int {
 	var track []int
 	var res [][]int
