@@ -13,15 +13,15 @@
 ### 第一阶段
 - [x] Sort: 个人准备的十大排序算法系列 [完成5个]
 - [x] BinaryTree: 代码随想录的二叉树系列[已完成]
-- [x] BackTrack: 代码随想录的回溯算法系列[已完成]
-- [] Greedy: 代码随想录的贪心系列[在学习]
-- [] DynamicProgramming: 代码随想录的动态规划系列[在学习] 
-- [] GoQueation: 并发或一些高级函数的使用[将一些常用函数用起来,1-22题目来源于interview-go(question).23及之后是看网上一些语法测试]
+- [x] BackTrack: 代码随想录的回溯算法系列[已完成]  
+- [ ] Greedy: 代码随想录的贪心系列[在学习]
+- [ ] DynamicProgramming: 代码随想录的动态规划系列[在学习] 
+- [ ] GoQueation: 并发或一些高级函数的使用[将一些常用函数用起来,1-22题目来源于interview-go(question).23及之后是看网上一些语法测试]
 
-* 注意：代码随想录系列文件夹尽力和网站章节同步，可能存在部分出入
-* 另外undo文件是未完成部分，待补
+注意：代码随想录系列文件夹尽力和网站章节同步，可能存在部分出入.  
+另外undo文件是未完成部分，待补.  
 ### 第二阶段
-- [] DesignPattern: 设计模式，主攻单例模式、工厂模式，其他简单学习[单例完成]
-- [] DataStructure: 数据结构[LRU]
-- [] LeetcodeOrSQL: 刷LeetCode[在学习]
+- [ ] DesignPattern: 设计模式，主攻单例模式、工厂模式，其他简单学习[单例完成]
+- [ ] DataStructure: 数据结构[LRU]
+- [ ] LeetcodeOrSQL: 刷LeetCode[在学习]
 
