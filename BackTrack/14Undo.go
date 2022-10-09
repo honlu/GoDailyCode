@@ -11,8 +11,15 @@ answer:
 	实际上确实是深搜，但这是深搜中使用了回溯的例子，在查找路径的时候，
 	如果不回溯，怎么能查到目标路径呢。
 
-以下改变官方，非代码随想录思路。
-Undo: 示例可以通过，但是超出内存了？？？
+	首先先把图的邻接表存进字典，并且按字典序排序，然后从‘JFK’开始深搜，
+	每前进一层就减去一条路径，直到某个起点不存在路径的时候就会跳出while循环进行回溯，
+	相对先找不到路径的一定是放在相对后面，
+	所以当前搜索的起点from会插在当前输出路径的第一个位置。
+
+
+以下参考官方和
+https://leetcode.cn/problems/reconstruct-itinerary/solution/332-zhong-xin-an-pai-xing-cheng-shen-sou-hui-su-by/，
+
 */
 func findItinerary(tickets [][]string) []string {
 	var res []string
@@ -27,7 +34,7 @@ func findItinerary(tickets [][]string) []string {
 		sort.Strings(m[key]) // 把每个起点对应的数组按照字母排序
 	}
 	backTrack("JFK", m, &res)
-	// 翻转数组——这一步不能少！
+	// 翻转数组
 	for i := 0; i < len(res)/2; i++ {
 		res[i], res[len(res)-1-i] = res[len(res)-1-i], res[i]
 	}
@@ -43,9 +50,10 @@ func backTrack(cur string, m map[string][]string, res *[]string) {
 		}
 		// 还有路，继续走
 		temp := m[cur][0]
-		backTrack(temp, m, res)
 		// 去掉这条路
-		m[cur] = m[cur][1:] // 注意函数内，还可以改变吗
+		m[cur] = m[cur][1:] // 注意,要在递归之前！
+		backTrack(temp, m, res)
+
 	}
 	// 往下递归到终点之后开始入栈
 	// 往上递归返回的入栈就是来时的路反着走回去，这样得到的数组是 路径的倒序
