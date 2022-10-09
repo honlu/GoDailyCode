@@ -1,7 +1,7 @@
 package backtrack
 
 /*
-3. 组合总和III
+3、 组合总和III
 day:2022-6-16
 link:https://leetcode.cn/problems/combination-sum-iii/
 idea:在[1,2,3,4,5,6,7,8,9]这个集合中找到和为n的k个数的组合。
