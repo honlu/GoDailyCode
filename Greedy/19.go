@@ -41,8 +41,8 @@ func backTrack(root *TreeNode, res *int) int {
 		return 2
 	}
 
-	left := backTrack(root.Left)   // 先左节点
-	right := backTrack(root.Right) // 然后右节点
+	left := backTrack(root.Left, res)   // 先左节点
+	right := backTrack(root.Right, res) // 然后右节点
 	// 最后中间节点-后序遍历
 	// 情况1-左右节点都有覆盖
 	if left == 2 && right == 2 {
