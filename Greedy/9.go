@@ -34,9 +34,16 @@ answer:
 // }
 
 // 贪心算法——方法2
+/*
+思路：
+首先:如果总油量减去总消耗大于等于零那么一定可以跑完一圈，
+	说明各个站点的加油站 剩油量rest[i]相加一定是大于等于零的。
+其次：i从0开始累加rest[i]，和记为curSum，一旦curSum小于零，
+说明[0, i]区间都不能作为起始位置，起始位置从i+1算起，再从0计算curSum。
+*/
 func canCompleteCircuit(gas []int, cost []int) int {
-	curSum := 0   // 当前节点的剩余油量
-	totalSum := 0 // 总共剩余油量
+	curSum := 0   // 当前节点剩余油量
+	totalSum := 0 // 总共剩余油量=总油量-总消耗量
 	start := 0    // 起点
 	for i := 0; i < len(gas); i++ {
 		curSum += gas[i] - cost[i]
