@@ -32,15 +32,15 @@ func canPartition(nums []int) bool {
 	if sum%2 == 1 {
 		return false
 	}
-	temp := sum / 2
+	target := sum / 2
 	// 定义dp数组和初始化
-	dp := make([]int, temp+1)
+	dp := make([]int, target+1)
 	for _, v := range nums {
-		for j := temp; j >= v; j-- {
+		for j := target; j >= v; j-- {
 			if dp[j-v]+v > dp[j] {
 				dp[j] = dp[j-v] + v
 			}
 		}
 	}
-	return dp[temp] == temp
+	return dp[target] == target
 }

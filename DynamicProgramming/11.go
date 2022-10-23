@@ -32,15 +32,15 @@ func lastStoneWeightII(stones []int) int {
 	for _, value := range stones {
 		sum += value
 	}
-	temp := sum / 2
+	target := sum / 2
 	// dp数组确定和初始化
-	dp := make([]int, temp+1)
+	dp := make([]int, target+1)
 	for _, value := range stones { // 遍历物品即石头
-		for j := temp; j >= value; j-- { // 遍历背包
+		for j := target; j >= value; j-- { // 遍历背包
 			dp[j] = max(dp[j], dp[j-value]+value)
 		}
 	}
-	return sum - dp[temp] - dp[temp]
+	return sum - dp[target] - dp[target]
 }
 
 func max(a, b int) int {
