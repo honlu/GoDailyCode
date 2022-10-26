@@ -22,6 +22,7 @@ func main() {
 
 	go func() {
 		for {
+			// 没有阻塞，开始执行
 			fmt.Println("1")
 			time.Sleep(1 * time.Second)
 			ch2 <- 1 // 发送，block

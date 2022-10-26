@@ -1,7 +1,8 @@
 /*
 2022-9-23
 question:
-	sync.Map的用法，并发map.判断下面代码的输出
+	sync.Map的用法，并发map.
+	判断下面代码的输出
 answer:
 
 */
