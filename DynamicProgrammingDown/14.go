@@ -31,7 +31,7 @@ answer:
 func minDistance(word1 string, word2 string) int {
 	// dp数组和初始化
 	dp := make([][]int, len(word1)+1)
-	for i := 0; i <= len(word1)+1; i++ {
+	for i := 0; i <= len(word1); i++ {
 		dp[i] = make([]int, len(word2)+1)
 		dp[i][0] = i // 初始化，有点绕
 	}
