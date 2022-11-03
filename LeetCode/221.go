@@ -70,10 +70,8 @@ func maximalSquare(matrix [][]byte) int {
 			}
 		}
 	}
-	for j := 0; j < len(matrix[i]); j++ { // 注意这里长度
-		if matrix[i][j] == '1' {
-			res = 1
-		}
+	for j := 0; j < len(matrix[0]); j++ { // 注意这里长度
+		dp[0][j] = int(matrix[0][j]-'0')
 	}
 	// 遍历顺序
 	for i := 1; i < len(matrix); i++ {
