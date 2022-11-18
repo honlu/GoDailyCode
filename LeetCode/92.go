@@ -43,11 +43,10 @@ func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	p = low.Next
 	low.Next = fast
 	p.Next = temp
-	// 这里有些边界注意
+	// 这里有些边界注意,即left=1导致的特殊情况
 	if p == head {
 		return fast
 	} else {
 		return head
 	}
-
 }
