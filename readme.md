@@ -23,6 +23,7 @@
 ### 第二阶段 [2022.11-] Go数据结构，LeetCode
 - [ ] DataStructure: 数据结构(LRU,堆，前缀树，(单or双向)链表，队列，栈，哈希表(必不可少));算法(广度优先搜索，深度优先搜索)  [在学习]
 - [ ] LeetCode: 刷LeetCode [在学习]
+- [ ] SwordOffer: 剑指offer [在学习]
 
 ### 第二阶段 [2022.9-] Go设计模式，Go高级函数
 - [ ] GoQuestion: 并发或一些高级函数的使用[将一些标准库的函数常用函数用起来,1-22题目来源于interview-go(question).23及之后是看网上一些语法测试]
