@@ -6,6 +6,7 @@
   * https://github.com/mohuishou/go-design-pattern
   * https://space.bilibili.com/373073810
 * 数据结构：https://lailin.xyz/post/list.html 以及 https://leetcode.cn
+* Go36讲：[Go语言核心36讲](https://time.geekbang.org/column/intro/100013101?code=YF69zjMN9upBt%2FgAwgwUikil2N2wiVvJ7XcyiRsLXU8%3D&source=app_share), [配套代码](https://github.com/hyper0x/Golang_Puzzlers)
 * 一些基本的数据结构
 
 每日是为了提醒自己学习！
@@ -21,11 +22,13 @@
 注意：代码随想录系列文件顺序尽力和网站章节同步，可能存在部分出入.  
 
 ### 第二阶段 [2022.11-] Go数据结构，LeetCode
-- [ ] DataStructure: 数据结构(LRU,堆，前缀树，(单or双向)链表，队列，栈，哈希表(必不可少));算法(广度优先搜索，深度优先搜索)  [在学习]
+- [ ] Go36讲：Go语言核心36讲学习笔记 [在学习]
 - [ ] LeetCode: 刷LeetCode [在学习]
-- [ ] SwordOffer: 剑指offer [在学习]
 
-### 第二阶段 [2022.9-] Go设计模式，Go高级函数
+
+### 计划阶段 [时间未定] Go设计模式，Go高级函数
 - [ ] GoQuestion: 并发或一些高级函数的使用[将一些标准库的函数常用函数用起来,1-22题目来源于interview-go(question).23及之后是看网上一些语法测试]
 - [ ] DesignPattern: 设计模式，主攻单例模式、工厂模式，其他简单学习[单例完成]
+- [ ] SwordOffer: 剑指offer [在准备]
+- [ ]  DataStructure: 数据结构(LRU,堆，前缀树，(单or双向)链表，队列，栈，哈希表(必不可少));算法(广度优先搜索，深度优先搜索)  [在准备]
 注意：undo文件是未完成部分，待补. 
