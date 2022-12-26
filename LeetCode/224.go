@@ -32,7 +32,7 @@ func calculate(s string) int {
 			// 构建多位数
 			j := i
 			num = 0
-			for j < len(s) && unicode.IsDigit(rune(s[i])) {
+			for j < len(s) && unicode.IsDigit(rune(s[j])) {
 				num = num*10 + int(s[j]-'0')
 				j++
 			}
