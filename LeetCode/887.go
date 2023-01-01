@@ -46,5 +46,5 @@ func superEggDrop(k int, n int) int {
 			dp[i][j+1] = dp[i][j] + dp[i-1][j] + 1
 		}
 	}
-	return m
+	return j
 }
