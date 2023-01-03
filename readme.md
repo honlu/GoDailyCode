@@ -21,19 +21,21 @@
 - [x] Greedy: 代码随想录的贪心系列[已完成]
 - [x] Stack: 代码随想录的单调栈系列[已完成]
 - [x] DynamicProgramming: 代码随想录的动态规划系列[已完成]   
-2022.11.2日梳理完成。开启二刷和其他阶段任务。
+2022.11.2日梳理完成。开启下阶段任务。
 注意：代码随想录系列文件顺序尽力和网站章节同步，可能存在部分出入.  
 
 ### 第二阶段 [2022.11-12] Go数据结构，LeetCode
 - [x] Go36讲：Go语言核心36讲学习笔记 [已完成][一刷]
-- [x] LeetCode: 刷LeetCode [已完成][一刷CodeTop未做部分46题]
+- [x] LeetCode: 刷LeetCode [已完成][一刷CodeTop]
 2022.12.20 Go36讲一刷结束。
-2022.12.23 CodeTop刷完113题，未做过的记录下来
-- [ ] CommonPackage: Go常用内置包fmt,io,bufio,sort,strconv,os,sync,flag,encoding/json,html/template,net/http,reflect,os/exec,strings,bytes,log 使用测试记录 [在学习]
+2022.12.23 CodeTop刷完117道。
 
-### 计划阶段 [时间未定] Go设计模式，Go高级函数
-- [ ] GoQuestion: 并发或一些高级函数的使用[将一些标准库的函数常用函数用起来,1-22题目来源于interview-go(question).23及之后是看网上一些语法测试]
-- [ ] DesignPattern: 设计模式，主攻单例模式、工厂模式，其他简单学习[单例完成]
-- [ ] SwordOffer: 剑指offer [在准备]
-- [ ]  DataStructure: 数据结构(LRU,堆，前缀树，(单or双向)链表，队列，栈，哈希表(必不可少));算法(广度优先搜索，深度优先搜索)  [在准备]
+### 第三阶段 [2023.1 -] Go算法二刷，Go设计模式，Go高级函数
+- [ ] ComPackage: Go常用内置包fmt,io,bufio,sort,strconv,os,sync,flag,encoding/json,html/template,net/http,reflect,os/exec,strings,bytes,log 测试用例 [在学习]
+- [ ] CodeCarl: 代码随想录二刷，补充一些细节[在学习]
+  - [ ] Array: 数组专题(文件名是LeetCode对应题目) [在学习]
+- [ ] GoQuestion: 并发或一些高级函数的使用(来源于interview-go(question))[在学习]
+- [ ] DesignPattern: 设计模式 [在学习]
+- [ ] SwordOffer: 剑指offer [在学习]
+- [ ] DataStructure: 数据结构(LRU,堆，前缀树，(单or双向)链表，队列，栈，哈希表(必不可少));算法(广度优先搜索，深度优先搜索)  [在学习]
 注意：undo文件是未完成部分，待补. 
