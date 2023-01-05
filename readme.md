@@ -23,6 +23,7 @@
 - [ ] Go36讲: 二刷, Go常用内置包fmt,io,bufio,sort,strconv,os,sync,flag,encoding/json,html/template,net/http,reflect,os/exec,strings,bytes,log 测试用例 [在学习]
 - [ ] CodeCarl: 代码随想录二刷，补充一些细节[在学习]
   - [x] Array: 数组专题(文件名是LeetCode对应题目) [二刷完]
+  - [ ] List: 链表专题(文件名是LeetCode对应题目) [二刷完]
 - [ ] DesignPattern: 设计模式(单例、工厂) [在学习]
 - [ ] SwordOffer: 剑指offer [在学习]
 - [ ] DataStructure: 数据结构(LRU,堆，前缀树，(单or双向)链表，队列，栈，哈希表(必不可少));算法(广度优先搜索，深度优先搜索)  [在学习]

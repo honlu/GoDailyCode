@@ -32,7 +32,7 @@ func main() {
 }
 
 // 快排
-func quickSort(arr []int, left, right int) []int {
+func quickSort(arr []int, left, right int) []int { // 注意区间定义[left,right]
 	if left < right {
 		index := parition(arr, left, right) // 返回索引
 		// 递归
