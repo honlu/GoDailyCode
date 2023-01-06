@@ -20,7 +20,7 @@
 
 ### 第三阶段 [2023.1 -] Go算法二刷，Go设计模式，Go高级函数
 - [x] GoQuestion: 并发或一些高级函数的使用(来源于interview-go(question),重点10之后,channel,sync(waitgroup,mutex),time,goroutine,内存逃逸)[初步完成]
-- [ ] Go36讲: 二刷, Go常用内置包fmt,io,bufio,sort,strconv,os,sync,flag,encoding/json,html/template,net/http,reflect,os/exec,strings,bytes,log 测试用例 [在学习]
+- [ ] Go36讲: 二刷, Go常用内置包**fmt**,**io**,**bufio**,**sort**,**strconv**,**os**,**sync**,**flag**,encoding/json,html/template,**net/http**,reflect,**os/exec**,**strings,bytes**,log 测试用例 [在学习]
 - [ ] CodeCarl: 代码随想录二刷，补充一些细节[在学习]
   - [x] Array: 数组专题(文件名是LeetCode对应题目) [二刷完]
   - [ ] List: 链表专题(文件名是LeetCode对应题目) [二刷完]
