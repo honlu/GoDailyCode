@@ -23,8 +23,8 @@
 - [ ] Go36讲: 二刷, Go常用内置包**fmt**,**io**,**bufio**,**sort**,**strconv**,**os**,**sync**,**flag**,encoding/json,html/template,**net/http**,reflect,**os/exec**,**strings,bytes**,log 测试用例 [在学习]
 - [ ] CodeCarl: 代码随想录二刷，补充一些细节[在学习]  
 (二刷，文件名是LeetCode对应题目)
-  - [x] Array: 数组专题(重点：双指针法) [二刷完]
-  - [x] List: 链表专题(重点：链表的两种操作方式：直接在原来链表操作；设置虚拟头节点操作(重要)。) [二刷完]
+  - [x] Array: 数组专题(5道。重点：双指针法) [二刷完]
+  - [x] List: 链表专题(7道。重点：链表的两种操作方式：直接在原来链表操作；设置虚拟头节点操作(重要)。) [二刷完]
   - [ ] Hash: 哈希表专题(重点：) [在学习]
 - [ ] DesignPattern: 设计模式(单例、工厂) [在学习]
 - [ ] SwordOffer: 剑指offer [在学习]
