@@ -20,14 +20,16 @@
 
 ### 第三阶段 [2023.1 -] Go算法二刷，Go设计模式，Go高级函数
 - [x] GoQuestion: 并发或一些高级函数的使用(来源于interview-go(question),重点10之后,channel,sync(waitgroup,mutex),time,goroutine,内存逃逸)[初步完成]
-- [ ] Go36讲: 二刷, Go常用内置包**fmt**,**io**,**bufio**,**sort**,**strconv**,**os**,**sync**,**flag**,encoding/json,html/template,**net/http**,reflect,**os/exec**,**strings,bytes**,log 测试用例 [在学习]
+- [x] Go36讲: 二刷, Go常用内置包**fmt**,**io**,**bufio**,**sort**,**strconv**,**os**,**sync**,**flag**,encoding/json,html/template,**net/http**,reflect,**os/exec**,**strings,bytes**,log 测试用例 [在学习]
 - [ ] CodeCarl: 代码随想录二刷，补充一些细节(若是有机会三刷，就是优化代码！)[在学习]  
 (二刷，文件名是LeetCode对应题目)
   - [x] Array: 数组专题(5道。重点：双指针法) [二刷完]
   - [x] List: 链表专题(7道。重点：链表的两种操作方式：直接在原来链表操作；设置虚拟头节点操作(重要)。) [二刷完]
   - [x] Hash: 哈希表专题(重点：哈希表key存什么，value存什么) [二刷完]
   - [x] Strings: 字符串专题(重点：strings包，以及双指针优化;字符串匹配KMP) [二刷完]
-  - [ ] DoublePoints: 双指针专题
+  - [x] DoublePoints: 双指针专题(包含的题目，在前面的专题已经做过，不再单独罗列)[二刷完]  
+  以下专题都一刷时保存过，知识文件名不是LeetCode顺序，二刷全部更改以及代码优化。
+  - [ ] StackAndQueue: 栈与队列专题()[在学习]
 - [ ] DesignPattern: 设计模式(单例、工厂) [在学习]
 - [ ] SwordOffer: 剑指offer [在学习]
 - [ ] DataStructure: 数据结构(LRU,堆，前缀树，(单or双向)链表，队列，栈，哈希表(必不可少));算法(广度优先搜索，深度优先搜索)  [在学习]
