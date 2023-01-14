@@ -8,9 +8,10 @@ Day:2022-6-3
 func preorderTraversal(root *TreeNode) (res []int) {
 	var traversal func(node *TreeNode) // 匿名函数
 	traversal = func(node *TreeNode) {
-		if node == nil {
+		if node == nil { // 终止条件
 			return
 		}
+		// 递归内的逻辑执行
 		res = append(res, node.Val) // 前序添加元素
 		traversal(node.Left)
 		traversal(node.Right)
