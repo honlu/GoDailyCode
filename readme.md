@@ -49,4 +49,6 @@
 * 剑指Offer(swordOffer):https://leetcode.cn/problem-list/xb9nqhhg/, https://leetcode.cn/problem-list/e8X3pBZi/
 * Go36讲：[Go语言核心36讲](https://time.geekbang.org/column/intro/100013101?code=YF69zjMN9upBt%2FgAwgwUikil2N2wiVvJ7XcyiRsLXU8%3D&source=app_share), [配套代码](https://github.com/hyper0x/Golang_Puzzlers)
 * 常用内置包(CommonPackage):http://c.biancheng.net/view/4306.html
-* 其他参考：
+
+
+## 笔记目录（待整理）
