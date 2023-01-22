@@ -24,6 +24,16 @@ idea:
 	如果搜索结束时两个队列同时为空，
 			则两个二叉树相同。如果只有一个队列为空，则两个二叉树的结构不同，因此两个二叉树不同。
 
+
+测试用例：
+[1,2,3]
+[1,2,3]
+[1,2]
+[1,null,2]
+[1,2,1]
+[1,1,2]
+[1]
+[1,null,2]
 */
 
 // 递归实现(深度优先搜索)
@@ -41,7 +51,6 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 }
 
 // 迭代版本(层次遍历,两个队列)
-// 此代码有问题
 func isSameTree(p *TreeNode, q *TreeNode) bool {
 	if p == nil && q == nil {
 		return true
@@ -50,35 +59,32 @@ func isSameTree(p *TreeNode, q *TreeNode) bool {
 		return false
 	}
 	// 两个队列(层次遍历)
-	queue1, queue2 := []*TreeNode{p}, []*TreeNode{q}
-	for len(queue1) > 0 && len(queue2) > 0 {
-		if len(queue1) != len(queue2) {
+	if p.Val != q.Val {
+		{
 			return false
 		}
+	}
+	queue1, queue2 := []*TreeNode{p}, []*TreeNode{q}
+	for len(queue1) > 0 && len(queue2) > 0 {
 		size := len(queue1)
 		for i := 0; i < size; i++ {
-			// 比较每一层的对应节点
-			if queue1[i] == nil && queue2[i] == nil {
-				continue
-			}
-			if queue1[i] == nil || queue2[i] == nil {
-				return false
-			}
-			if queue1[i].Val != queue2[i].Val {
-				return false
-			}
 			// 开始添加新的一层节点
-			if queue1[i].Left != nil {
+			if queue1[i].Left != nil && queue2[i].Left != nil && queue1[i].Left.Val == queue2[i].Left.Val {
 				queue1 = append(queue1, queue1[i].Left)
-			}
-			if queue1[i].Right != nil {
-				queue1 = append(queue1, queue1[i].Right)
-			}
-			if queue2[i].Left != nil {
 				queue2 = append(queue2, queue2[i].Left)
+			} else if queue1[i].Left == nil && queue2[i].Left == nil {
+				// 这里不执行代码，只是为了else方便
+			} else {
+				return false
 			}
-			if queue2[i].Right != nil {
+
+			if queue1[i].Right != nil && queue2[i].Right != nil && queue1[i].Right.Val == queue2[i].Right.Val {
+				queue1 = append(queue1, queue1[i].Right)
 				queue2 = append(queue2, queue2[i].Right)
+			} else if queue1[i].Right == nil && queue2[i].Right == nil {
+				// 这里不执行代码
+			} else {
+				return false
 			}
 		}
 		queue1 = queue1[size:]
