@@ -1,7 +1,8 @@
 package binarytree
 
 /*
-7、对称二叉树
+7
+101、对称二叉树
 day:2022-6-5
 update:2023-1-16
 link: https://leetcode.cn/problems/symmetric-tree/

@@ -3,8 +3,10 @@ package binarytree
 import "container/list"
 
 /*
-15、找树左下角的值
+15
+513、找树左下角的值
 day:2022-6-6
+update: 2023-1-23
 link:https://leetcode.cn/problems/find-bottom-left-tree-value/
 idea:本地要找出树的最后一行找到最左边的值。
 此时大家应该想起用层序遍历是非常简单的了，反而用递归的话会比较难一点。
@@ -25,7 +27,7 @@ func findBottomLeftValue(root *TreeNode) int {
 	var findLeftValue func(node *TreeNode, deep int) // deep 当前深度或层度
 	findLeftValue = func(node *TreeNode, deep int) {
 		if node.Left == nil && node.Right == nil { // 是叶子节点
-			if deep > maxDeep { // 是最新一层
+			if deep > maxDeep { // 是最新一层（有些递归过程是小于maxDeep所以就可以继续递归下去，不保存结果）
 				res = root.Val
 				maxDeep = deep
 			}
@@ -44,13 +46,13 @@ func findBottomLeftValue(root *TreeNode) int {
 
 // 迭代-层次遍历输出结果
 func findBottomLeftValueIter(root *TreeNode) int {
-	queue := list.New()
+	queue := list.New() // 队列声明
 	res := 0
-	queue.PushBack(root)
+	queue.PushBack(root) // 进队
 	for queue.Len() > 0 {
-		size := queue.Len()
+		size := queue.Len() // 当前队列长度
 		for i := 0; i < size; i++ {
-			node := queue.Remove(queue.Front()).(*TreeNode) // 弹出队列头部，删除并返回其值
+			node := queue.Remove(queue.Front()).(*TreeNode) // 弹出队列头部，删除并返回其值，以及并进行类型断言
 			if i == 0 {                                     // 层的左边第一个元素
 				res = node.Val
 			}

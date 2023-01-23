@@ -1,7 +1,8 @@
 package binarytree
 
 /*
-14、左叶子之和
+14
+404、左叶子之和
 day:2022-6-6
 update: 2023-1-22
 link:https://leetcode.cn/problems/sum-of-left-leaves/

@@ -3,7 +3,8 @@ package binarytree
 import "container/list"
 
 /*
-6、翻转二叉树
+6
+226、翻转二叉树
 day:2022-6-5
 update: 2023-1-15
 link:LeetCode-226 https://leetcode.cn/problems/invert-binary-tree/
