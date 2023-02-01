@@ -61,3 +61,28 @@ func backTrack(start, n, k int, path []int, res *[][]int) { // 注意着里res�
 		path = path[:len(path)-1]
 	}
 }
+
+// 剪枝优化
+func combine(n int, k int) [][]int {
+	res := [][]int{} // 用来存放符合条件结果的集合
+	path := []int{}  // 用来存放符合条件结果
+	var backtracking func(start int, path []int)
+	backtrack = func(start int, path []int) {
+		// base case
+		if len(path) == k { // 如果长度达到要求，添加到结果中
+			res = append(res, append([]int{}, path...))
+			return
+		}
+		// 回溯算法标准框架
+		for i := start; i <= n-(k-len(path)); i++ { // 优化地方
+			// 选择
+			path = append(path, i)
+			// 通过start参数控制树枝的遍历，避免产生重复的子集
+			backtrack(i+1, path) // 递归往下
+			// 撤销选择
+			path = path[:len(path)-1] // 回溯
+		}
+	}
+	backtrack(1, path)
+	return res
+}
