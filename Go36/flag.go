@@ -1,9 +1,17 @@
 /*
 简单的情况下可以不使用任何库，直接处理 os.Args；其实 Golang 的标准库提供了 flag 包来处理命令行参数.
 flag包：参考Golang_puzzlers中article2章代码.
+
+一下是两种常用的定义命令行flag参数的方法：
+- flag.Type(flag 名, 默认值, 帮助信息) *Type
+- flag.TypeVar(Type 指针, flag 名, 默认值, 帮助信息)
+
 Windows终端运行方式：
 	1. 不传递命令行参数运行：go run .\flag.go
+		这样name使用默认值everyone
 	2. 传递命令行参数：go run .\flag.go -name=jack
+		flag解析之后，name为jack
+
 */
 package main
 
@@ -25,5 +33,5 @@ func main() {
 	fmt.Printf("Hello, %s!\n", name)
 	// flag.Args() 函数返回没有被解析的命令行参数
 	// func NArg() 函数返回没有被解析的命令行参数的个数
-	fmt.Printf("args=%s, num=%d\n", flag.Args(), flag.NArg())
+	fmt.Printf("args=%s, num=%d\n", flag.Args(), flag.NArg()) // 较少用到
 }
