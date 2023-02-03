@@ -27,6 +27,7 @@ func combinationSum3(k int, n int) [][]int {
 		k: 题目中要求k个数的集合
 		sum: 已经收集的元素的总和，也就是path里元素的总和
 		start: 下一层for循环搜索的起始位置
+		(path在参数里加不加都可以)
 	*/
 	var backTrack func(targetSum, k, sum, start int)
 	backTrack = func(targetSum, k, sum, start int) {

@@ -19,6 +19,7 @@ idea:
 func combine(n int, k int) [][]int {
 	res := [][]int{} // 用来存放符合条件结果的集合
 	path := []int{}  // 用来存放符合条件结果
+	// 回溯函数声明和创建
 	var backtracking func(start int, path []int)
 	backtrack = func(start int, path []int) {
 		// base case
