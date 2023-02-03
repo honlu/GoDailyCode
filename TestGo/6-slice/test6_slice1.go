@@ -2,6 +2,10 @@ package main
 
 import "fmt"
 
+/*
+面试询问：
+关于slice在传入函数之后的变化，15行代码是否可以正常运行？
+*/
 func main() {
 	a := make([]int, 2, 3)
 	a[0] = 1
