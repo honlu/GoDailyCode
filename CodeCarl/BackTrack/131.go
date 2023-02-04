@@ -33,7 +33,7 @@ func partition(s string) [][]string {
 			res = append(res, append([]string{}, path...))
 			return
 		}
-		// 回溯逻辑算法标准步骤
+		// 回溯逻辑算法标准步骤(关键就是下面的逻辑理解！)
 		for i := start; i < len(s); i++ {
 			// 处理。注意下面i+1的逻辑
 			if isPartition(s, start, i) { // 是回文子串
