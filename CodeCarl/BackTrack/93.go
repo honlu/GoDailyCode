@@ -13,8 +13,48 @@ answer:
 */
 package main
 
-import "strconv"
+import (
+	"strconv"
+	"strings"
+)
 
+// 一个函数完成-回溯
+func restoreIpAddresses(s string) []string {
+	var res []string  // 符合的结果集
+	var path []string // 符合的结果，用[]string来存储符合的每段整数,方便添加和回溯，以及最后拼接成ip地址
+	var backTrack func(start int)
+	backTrack = func(start int) {
+		// base case
+		if len(path) == 4 { // path正好每个元素都符合0-255的条件
+			if start == len(s) {
+				str := strings.Join(path, ".") // 字符串拼接
+				res = append(res, str)
+				return
+			}
+		}
+		// 回溯标准，递归逻辑
+		for i := start; i < len(s); i++ {
+			if s[start] == '0' && i != start {
+				break // 含有前导0，无效
+			}
+			// 处理
+			str := s[start : i+1]
+			num, _ := strconv.Atoi(str)
+			if num >= 0 && num <= 255 {
+				path = append(path, str) // 符合条件，就进入下一层
+				backTrack(i + 1)
+				path = path[:len(path)-1] // 回溯
+			} else { // 如果不满足条件，往后也不可能满足条件，直接退出
+				break
+			}
+		}
+	}
+	backTrack(0)
+
+	return res
+}
+
+// 拆开写
 func restoreIpAddresses(s string) []string {
 	var res, track []string
 	backTrack(0, s, track, &res)
