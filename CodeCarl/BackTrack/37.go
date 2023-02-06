@@ -1,6 +1,8 @@
 /*
-16.解数独
+16
+37.解数独
 day: 2022-10-9
+update: 2023-2-6 by lu
 link: https://leetcode.cn/problems/sudoku-solver/
 question:
 	编写一个程序，通过填充空格来解决数独问题
@@ -13,6 +15,7 @@ func solveSudoku(board [][]byte) {
 	backTrack(0, 0, board)
 }
 
+// 参数：行列，棋盘
 func backTrack(i, j int, board [][]byte) bool {
 	// 若有解，返回true; 无解，返回fasle
 	// 终止条件
