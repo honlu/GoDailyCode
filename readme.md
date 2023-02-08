@@ -32,7 +32,7 @@
   以下专题都一刷时保存过，知识文件名不是LeetCode顺序，二刷全部更改以及代码优化。
   - [x] StackAndQueue: 栈与队列专题[二刷完]
   - [x] BinaryTree: 二叉树专题(2023-1-30) [二刷完]
-  - [ ] BackTrack: 回溯专题 [在学习]
+  - [x] BackTrack: 回溯专题 [二刷完]
   - [ ] Greedy: 贪心专题 [在学习]
   - [ ] DynamicProgramming: 动态规划[在学习]
 - [ ] TestGo: 刘丹冰老师B站课代码、平常测试用到的相关代码、以及面试遇到的坑测试代码。

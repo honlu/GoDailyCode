@@ -30,7 +30,7 @@ idea:
 	可以尝试使用贪心策略，先将饼干数组和小孩数组排序。
 	然后从后向前遍历小孩数组，用大饼干优先满足胃口大的，并统计满足小孩数量。
 */
-// 贪心
+// 贪心:先遍历胃口，再遍历饼干
 func findContentChildren(g []int, s []int) int {
 	// 首先排序，从小到大
 	sort.Ints(g)                       // 胃口
@@ -52,15 +52,15 @@ func findContentChildren(g []int, s []int) int {
 // 换个思路：小饼干先喂饱小胃口
 // 注意这种写法，两个循环的顺序改变了，
 // 先遍历的饼干，在遍历的胃口，这是因为遍历顺序变了，我们是从小到大遍历。
-func findContentChildren(g []int, s []int) int {
-	sort.Ints(g) // 排序孩子数组
-	sort.Ints(s) // 排序饼干数组
-	// 从小到大
-	res := 0
-	for i := 0; i < len(s); i++ { // 先遍历饼干
-		if res < len(g) && s[i] >= g[res] { // //如果饼干的大小大于或等于孩子的为空则给与，否则不给予，继续寻找选一个饼干是否符合
-			res++
-		}
-	}
-	return res
-}
+// func findContentChildren(g []int, s []int) int {
+// 	sort.Ints(g) // 排序孩子数组
+// 	sort.Ints(s) // 排序饼干数组
+// 	// 从小到大
+// 	res := 0
+// 	for i := 0; i < len(s); i++ { // 先遍历饼干
+// 		if res < len(g) && s[i] >= g[res] { // //如果饼干的大小大于或等于孩子的为空则给与，否则不给予，继续寻找选一个饼干是否符合
+// 			res++
+// 		}
+// 	}
+// 	return res
+// }
