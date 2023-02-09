@@ -23,6 +23,29 @@ idea:
 其实也没有，类似的题目做过了就会想到。
 此时大家就应该了解了：保持区间波动，只需要把单调区间上的元素移除就可以了
 */
+// 最新代码，解决代码符合度。长度符合，摆动序列也符合
+// 关键在i开始索引，以及path保存被减数还是减数
+func wiggleMaxLength(nums []int) int {
+	if len(nums) < 2 {
+		return 1
+	}
+	// 利用前一个差值和当前差值来实现摆动序列的长度
+	// 注意当前差为0时，没有意义。
+	var res, pre, cur int // 结果值，前一个差值，当前差值.初始均为0
+	var path []int        // 一个摆动序列，测试使用
+	res = 1
+	for i := 0; i < len(nums)-1; i++ {
+		cur = nums[i+1] - nums[i]
+		if (cur > 0 && pre <= 0) || (cur < 0 && pre >= 0) {
+			pre = cur // 注意这里，只在摆动变化的时候更新pre
+			res++
+			path = append(path, nums[i])
+		}
+	}
+	fmt.Println(path) // 打印一个摆动序列。
+	return res
+}
+
 // 局部符合，则整体可能满足
 func wiggleMaxLength(nums []int) int {
 	if len(nums) < 2 {
