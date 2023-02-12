@@ -1,11 +1,13 @@
 /*
-7、跳跃游戏2
+7
+45. 跳跃游戏2
 2022-10-12
-link: 45-https://leetcode.cn/problems/jump-game-ii/
+2023-2-12 update by lu
+link: https://leetcode.cn/problems/jump-game-ii/
 question:
 	给定一个非负整数数组，你最初位于数组的第一个位置。
-数组中的每个元素代表你在该位置可以跳跃的最大长度。
-你的目标是使用最少的跳跃次数到达数组的最后一个位置。
+	数组中的每个元素代表你在该位置可以跳跃的最大长度。
+	你的目标是使用最少的跳跃次数到达数组的最后一个位置。
 answer:
 	贪心的思路
 	局部最优：当前可移动距离尽可能多走，如果还没到终点，步数再加一。
@@ -35,15 +37,36 @@ func jump(nums []int) int {
 			next = nums[i] + i // 更新下一步覆盖最远距离下标
 		}
 		if i == cur { // 遇到当前覆盖最远距离下标
-			if cur != len(nums)-1 { // 如果当前覆盖最远距离下标不是终点
+			if cur < len(nums)-1 { // 如果当前覆盖最远距离下标不是终点
 				res++      // 需要走下一步
 				cur = next // 更新当前覆盖最远距离下标（相当于加油了）
-				if next == len(nums)-1 {
+				if next >= len(nums)-1 {
 					break // 下一步的覆盖范围已经可以达到终点，结束循环
 				}
-			} else {
+			} else { // 当前覆盖最远距到达集合终点，不用做res++操作了，直接结束
 				break
 			}
+		}
+	}
+	return res
+}
+
+/*
+代码优化
+*/
+func jump(nums []int) int {
+	if len(nums) == 1 {
+		return 0
+	}
+	res := 0
+	cover, nextCover := 0, 0
+	for i := 0; i < len(nums)-1; i++ { // 精髓在于控制移动下标i只移动到len(nums)-2的位置
+		if nums[i]+i > nextCover {
+			nextCover = nums[i] + i
+		}
+		if i == cover {
+			cover = nextCover
+			res++
 		}
 	}
 	return res
