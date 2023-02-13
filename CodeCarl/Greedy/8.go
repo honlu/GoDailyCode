@@ -1,13 +1,16 @@
 /*
-8、K次取反后最大化的数组和
+8
+1005. K次取反后最大化的数组和
 2022-10-12
-link:1005-https://leetcode.cn/problems/maximize-sum-of-array-after-k-negations/
+2023-2-13 update by lu
+link:https://leetcode.cn/problems/maximize-sum-of-array-after-k-negations/
 question:
 	给定一个整数数组 A，和要修改的次数K。我们只能用以下方法修改该数组：
 	我们选择某个索引 i 并将 A[i] 替换为 -A[i]，然后总共重复这个过程 K 次。
 	（我们可以多次选择同一个索引 i。）
 	以这种方式修改数组后，返回数组可能的最大和。
 answer:
+	(两次贪心，但按照绝对值大小排序，可以很方便将两次贪心实现。)
 	贪心思想
 	局部最优：让绝对值大的负数变为正数，当前数值达到最大，整体最优：整个数组和达到最大。
 	局部最优可以推出全局最优。
@@ -26,29 +29,58 @@ answer:
 package main
 
 import (
-	"math"
 	"sort"
 )
 
+/*
+自己实现abs
+*/
 func largestSumAfterKNegations(nums []int, k int) int {
-	// 1、排序_最重要
 	sort.Slice(nums, func(i, j int) bool {
-		return math.Abs(float64(nums[i])) > math.Abs(float64(nums[j]))
-	}) // 逆序排序。正数按照从大到小排序，负数按照从小到大排序
-	// 2、从前往后遍历
+		return abs(nums[i]) > abs(nums[j])
+	})
 	for i := 0; i < len(nums); i++ {
-		if nums[i] < 0 && k > 0 {
-			nums[i] = -nums[i]
+		if nums[i] < 0 && k > 0 { // 第一次贪心
+			nums[i] *= -1
 			k--
 		}
 	}
-	if k%2 == 1 { // 3、如果k还大于0,则反转最小的元素，k奇数取反，k偶数反转后不变
-		nums[len(nums)-1] = -nums[len(nums)-1]
+	if k%2 == 1 { // 第二次贪心
+		nums[len(nums)-1] *= -1
 	}
-	// 4、求和
 	res := 0
-	for i := 0; i < len(nums); i++ {
-		res += nums[i]
+	for _, val := range nums {
+		res += val
 	}
 	return res
 }
+
+func abs(a int) int {
+	if a < 0 {
+		return a * -1
+	}
+	return a
+}
+
+// func largestSumAfterKNegations(nums []int, k int) int {
+// 	// 1、排序_最重要
+// 	sort.Slice(nums, func(i, j int) bool {
+// 		return math.Abs(float64(nums[i])) > math.Abs(float64(nums[j]))
+// 	}) // 逆序排序。正数按照从大到小排序，负数按照从小到大排序
+// 	// 2、从前往后遍历
+// 	for i := 0; i < len(nums); i++ {
+// 		if nums[i] < 0 && k > 0 {
+// 			nums[i] = -nums[i]
+// 			k--
+// 		}
+// 	}
+// 	if k%2 == 1 { // 3、如果k还大于0,则反转最小的元素，k奇数取反，k偶数反转后不变
+// 		nums[len(nums)-1] = -nums[len(nums)-1]
+// 	}
+// 	// 4、求和
+// 	res := 0
+// 	for i := 0; i < len(nums); i++ {
+// 		res += nums[i]
+// 	}
+// 	return res
+// }
