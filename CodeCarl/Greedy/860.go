@@ -1,7 +1,9 @@
 /*
-11、柠檬水找零
+11
+860. 柠檬水找零
 2022-10-13
-link:860-https://leetcode.cn/problems/lemonade-change/
+2023-2-16 updated by lu
+link: https://leetcode.cn/problems/lemonade-change/
 question:
 	在柠檬水摊上，每一杯柠檬水的售价为 5 美元。顾客排队购买你的产品，（按账单 bills 支付的顺序）一次购买一杯。
 每位顾客只买一杯柠檬水，然后向你付 5 美元、10 美元或 20 美元。你必须给每个顾客正确找零，也就是说净交易是每位顾客向你支付 5 美元。
