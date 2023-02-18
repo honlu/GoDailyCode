@@ -1,7 +1,9 @@
 /*
-13、用最少数量的箭引爆气球
+13
+452. 用最少数量的箭引爆气球
 2022-10-13
-link: 452-https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons/
+2023-2-18 updated by lu
+link: https://leetcode.cn/problems/minimum-number-of-arrows-to-burst-balloons/
 question:
 	一支弓箭可以沿着 x 轴从不同点完全垂直地射出。在坐标 x 处射出一支箭，若有一个气球的直径的开始和结束坐标为 xstart，xend，
 	且满足  xstart ≤ x ≤ xend，则该气球会被引爆。可以射出的弓箭的数量没有限制。 弓箭一旦被射出之后，可以无限地前进。
@@ -35,4 +37,30 @@ func findMinArrowShots(points [][]int) int {
 		}
 	}
 	return res
+}
+
+// 除了最小弓箭数，再加一个条件:知道每个箭的射击范围
+func findMinArrowShots(points [][]int) int {
+	if len(points) == 1 {
+		return 1
+	}
+	temp := make([][]int, 0)
+	sort.Slice(points, func(i, j int) bool {
+		if points[i][0] == points[j][0] {
+			return points[i][1] < points[j][1]
+		}
+		return points[i][0] < points[j][0]
+	})
+	temp = append(temp, points[0])
+	for i := 1; i < len(points); i++ {
+		if temp[len(temp)-1][1] >= points[i][0] {
+			temp[len(temp)-1][0] = points[i][0]
+			if temp[len(temp)-1][1] >= points[i][1] {
+				temp[len(temp)-1][1] = points[i][1]
+			}
+		} else {
+			temp = append(temp, points[i])
+		}
+	}
+	return len(temp)
 }
