@@ -1,11 +1,14 @@
 /*
-16、合并区间
+16
+56. 合并区间
 2022-10-13
+2023-2-21 updated by lu
 link:56-https://leetcode.cn/problems/merge-intervals/
 question:
 	给出一个区间的集合，请合并所有重叠的区间。
 answer:
 	和13.go\14.go很类似。代码稍微改一改就可以了。
+	排序+遍历
 */
 func merge(intervals [][]int) [][]int {
 	// 排序(左边界)
@@ -27,4 +30,30 @@ func merge(intervals [][]int) [][]int {
 		}
 	}
 	return intervals
+}
+
+// 上面是在原数组进行更改。下面是创建新的空间保存，看那个好理解吧
+func merge(intervals [][]int) [][]int {
+	if len(intervals) <= 1 {
+		return intervals
+	}
+
+	sort.Slice(intervals, func(i, j int) bool {
+		return intervals[i][0] < intervals[j][0] || (intervals[i][0] == intervals[j][0] && intervals[i][1] < intervals[j][1])
+	})
+
+	var res [][]int
+	res = append(res, intervals[0])
+
+	for i := 1; i < len(intervals); i++ {
+		if res[len(res)-1][1] >= intervals[i][0] {
+			if res[len(res)-1][1] <= intervals[i][1] {
+				res[len(res)-1][1] = intervals[i][1]
+			}
+		} else {
+			res = append(res, intervals[i])
+		}
+	}
+
+	return res
 }
