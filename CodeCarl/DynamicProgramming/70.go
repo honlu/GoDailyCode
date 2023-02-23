@@ -1,8 +1,10 @@
 package dynamicprogramming
 
 /*
-3、爬楼梯
+3
+70. 爬楼梯
 day:2022-6-19
+update: 2023-2-23 by lu [easy]
 link:https://leetcode.cn/problems/climbing-stairs/
 idea:
 本题大家如果没有接触过的话，会感觉比较难，多举几个例子，就可以发现其规律。
@@ -28,5 +30,17 @@ func climbStairs(n int) int {
 	for i := 3; i <= n; i++ { // 从前往后遍历
 		dp[i] = dp[i-2] + dp[i-1] // 递推公式
 	}
+	return dp[n]
+}
+
+// 不同起始位置更新
+func climbStairs(n int) int {
+	dp := make([]int, n+1)
+	dp[0], dp[1] = 1, 1
+
+	for i := 2; i <= n; i++ {
+		dp[i] = dp[i-1] + dp[i-2]
+	}
+
 	return dp[n]
 }

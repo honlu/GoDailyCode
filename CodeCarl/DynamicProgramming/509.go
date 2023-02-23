@@ -1,8 +1,10 @@
 package dynamicprogramming
 
 /*
-2、斐波那契数
+2
+509. 斐波那契数
 day:2022-6-17
+update: 2023-2-23 by lu
 link:https://leetcode.cn/problems/fibonacci-number/
 idea:
 「代码随想录」的风格是：简单题目是用来加深对解题方法论的理解的。
@@ -24,7 +26,7 @@ dp[1] = 1;
 如果代码写出来，发现结果不对，就把dp数组打印出来看看和我们推导的数列是不是一致的。
 */
 
-// 动态规划实现
+// 动态规划实现（只用两个长度的数组+一个结果变量，不断互换更新）
 func fib(n int) int {
 	if n < 2 {
 		return n
@@ -37,4 +39,21 @@ func fib(n int) int {
 		dp[1] = sum
 	}
 	return sum
+}
+
+// 数组完成版
+func fib(n int) int {
+	if n <= 1 {
+		return n
+	}
+	// 创建dp数组，理解dp每个i的含义
+	var dp []int
+	dp = make([]int, n+1)
+	// 确定dp递推公式；初始化；遍历更新
+	dp[0], dp[1] = 0, 1
+	for i := 2; i <= n; i++ {
+		dp[i] = dp[i-1] + dp[i-2]
+	}
+
+	return dp[n]
 }
