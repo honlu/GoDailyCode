@@ -21,6 +21,7 @@ import (
 	"time"
 )
 
+// 客户端
 func http1() {
 	host := "google.cn"
 
@@ -62,6 +63,7 @@ var domains = []string{
 	"golang.google.cn",
 }
 
+// 服务端
 func http2() {
 	// 你可以改变myTransport中的各个字段的值，
 	// 并观察后面的输出会有什么不同。

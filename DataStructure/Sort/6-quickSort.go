@@ -32,7 +32,7 @@ func main() {
 }
 
 // 快排
-func quickSort(arr []int, left, right int) []int {
+func quickSort(arr []int, left, right int) []int { // 注意区间定义[left,right]
 	if left < right {
 		index := parition(arr, left, right) // 返回索引
 		// 递归
@@ -48,11 +48,11 @@ func parition(arr []int, left, right int) int {
 	index := privot + 1               // 分区索引
 	for i := index; i <= right; i++ { // 划分分区，将[left+1,index]区域都小于基准，后面都大于基准
 		if arr[i] < arr[privot] { // 注意这里和基准比较
-			arr[i], arr[index] = arr[index], arr[i]
+			arr[i], arr[index] = arr[index], arr[i] // 将小于基准的元素放在它之前，则默认大的元素放它之后了。
 			index += 1
 		}
 	}
-	arr[privot], arr[index-1] = arr[index-1], arr[privot]
+	arr[privot], arr[index-1] = arr[index-1], arr[privot] // 基准的更新
 
 	return index - 1
 }
