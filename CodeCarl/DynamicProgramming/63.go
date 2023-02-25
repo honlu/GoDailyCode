@@ -1,6 +1,8 @@
 /*
-6、不同路径2
+6
+63. 不同路径2
 2022-10-14
+update: 2023-2-25 by lu
 link: 63-https://leetcode.cn/problems/unique-paths-ii/
 question:
 	一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为“Start” ）。
@@ -45,5 +47,36 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 
 		}
 	}
+	return dp[m-1][n-1]
+}
+
+// 优化后的代码
+func uniquePathsWithObstacles(obstacleGrid [][]int) int {
+	m, n := len(obstacleGrid), len(obstacleGrid[0])
+	if obstacleGrid[0][0] == 1 || obstacleGrid[m-1][n-1] == 1 { // 特殊情况，起点
+		return 0
+	}
+	// 创建DP
+	dp := make([][]int, m)
+	for i := 0; i < m; i++ {
+		dp[i] = make([]int, n)
+	}
+
+	// 初始化 第一列、第一行
+	for i := 0; i < m && obstacleGrid[i][0] != 1; i++ {
+		dp[i][0] = 1 // 代码优化后，把条件放到for循环的判断条件里
+	}
+	for i := 0; i < n && obstacleGrid[0][i] != 1; i++ {
+		dp[0][i] = 1
+	}
+	// 遍历
+	for i := 1; i < m; i++ {
+		for j := 1; j < n; j++ {
+			if obstacleGrid[i][j] == 0 {
+				dp[i][j] = dp[i][j-1] + dp[i-1][j]
+			}
+		}
+	}
+
 	return dp[m-1][n-1]
 }
