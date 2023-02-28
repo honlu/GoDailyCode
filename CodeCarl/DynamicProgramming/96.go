@@ -1,10 +1,13 @@
 /*
-7、不同的二叉搜索树
+7
+96. 不同的二叉搜索树
 2022-10-14
+update: 2023-2-28
 link:96-https://leetcode.cn/problems/unique-binary-search-trees/
 question:
 	给定一个整数 n，求以 1 ... n 为节点组成的二叉搜索树有多少种？
 answer:
+	这个堆叠好难发现！！！思维！
 	1、dp[i]的定义：i的不同元素节点组成的二叉搜索树的个数为dp[i]
 	2、递推公式：dp[i] += dp[j - 1] * dp[i - j]; ，j-1 为j为头结点左子树节点数量，i-j 为以j为头结点右子树节点数量
 	3、dp数组的初始化：
