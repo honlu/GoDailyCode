@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 /*
 冒泡排序：
@@ -41,6 +44,35 @@ func bubbleSort(arr []int) []int {
 		}
 	}
 	return arr
+}
+
+// 支持多种类型的冒泡，未写完
+func bubbleSort(arr interface{}) {
+	val := reflect.ValueOf(arr)
+	len := val.Len()
+
+	for i := 0; i < len-1; i++ {
+		for j := 0; j < len-i-1; j++ {
+			if reflect.TypeOf(arr).Kind() == reflect.Slice && reflect.TypeOf(val.Index(j).Interface()).Comparable() {
+				if reflect.DeepEqual(val.Index(j).Interface(), val.Index(j+1).Interface()) {
+					continue
+				}
+				if reflect.TypeOf(val.Index(j).Interface()).Kind() == reflect.String {
+					str1 := val.Index(j).Interface().(string)
+					str2 := val.Index(j + 1).Interface().(string)
+					if str1 > str2 {
+						// val.Swap(j, j+1) 进行交换
+					}
+				} else {
+					num1 := reflect.ValueOf(val.Index(j).Interface()).Float()
+					num2 := reflect.ValueOf(val.Index(j + 1).Interface()).Float()
+					if num1 > num2 {
+						// val.Swap(j, j+1) 进行交换
+					}
+				}
+			}
+		}
+	}
 }
 
 func main() {
