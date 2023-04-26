@@ -23,7 +23,7 @@
 - [x] GoQuestion: 并发或一些高级函数的使用(来源于interview-go(question),重点10之后,channel,sync(waitgroup,mutex),time,goroutine,内存逃逸)[初步完成]
 - [x] Go36讲: 二刷, Go常用内置包**fmt**,**io**,**bufio**,**sort**,**strconv**,**os**,**sync**,**flag**,encoding/json,html/template,**net/http**,reflect,**os/exec**,**strings,bytes**,log 测试用例 [初步完成]
 - [x] TestGo: 刘丹冰老师B站课代码、平常测试用到的相关代码、以及面试遇到的坑测试代码。[初步完成]
-- [ ] CodeCarl: 代码随想录二刷，补充一些细节(若是有机会再三刷，优化代码！)[在学习]  
+- [-] CodeCarl: 代码随想录二刷，补充一些细节(若是有机会再三刷，优化代码！)[暂停二刷]  
 (二刷，文件名改为LeetCode对应题目数，不再按照代码随想录数字顺序)
   - [x] Array: 数组专题(5道。重点：双指针法) [二刷完]
   - [x] LinkedList: 链表专题(7道。重点：链表的两种操作方式：直接在原来链表操作；设置虚拟头节点操作(重要)。) [二刷完]
@@ -34,14 +34,14 @@
   - [x] StackAndQueue: 栈与队列专题[二刷完]
   - [x] BinaryTree: 二叉树专题(2023-1-30) [二刷完]
   - [x] BackTrack: 回溯专题 [二刷完]
-  - [ ] Greedy: 贪心专题(2023-2-22) [二刷完]
-  - [ ] DynamicProgramming: 动态规划[在学习]
+  - [x] Greedy: 贪心专题(2023-2-22) [二刷完]
+  - [ ] DynamicProgramming: 动态规划[暂停]
 
-### 第四阶段 [计划中] Go设计模式、剑指Offer、常见数据结构
-
+### 第四阶段 [计划中] Go设计模式、LeetCode个人收藏题、常见数据结构
 - [ ] DesignPattern: 设计模式(单例、工厂) [在学习]
-- [ ] SwordOffer: 剑指offer [在学习]
+- [ ] 回顾LeetCode个人收藏题：舒服区边缘的题 [在学习]
 - [ ] DataStructure: 数据结构(LRU,堆，前缀树，(单or双向)链表，队列，栈，哈希表(必不可少));算法(广度优先搜索，深度优先搜索)  [在学习]
+
 注意：undo文件是未完成部分，待补. 
 
 
