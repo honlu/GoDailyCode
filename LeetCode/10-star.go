@@ -1,6 +1,7 @@
 /*
 10. 正则表达式匹配
 2022-11-6
+2023-4-26 updated, labeled as star by lu
 link:https://leetcode.cn/problems/regular-expression-matching
 question:
 	给你一个字符串 s 和一个字符规律 p，请你来实现一个支持 '.' 和 '*' 的正则表达式匹配。
@@ -19,8 +20,8 @@ answer:
 		2、p[j]='.'时，则默认s[i]=p[j]
 		3、p[j]='*'时，还要区分两种情况：
 			若p[j-1]=s[i] ,则dp[i][j]=dp[i-1][j]
-			若p[j-1]='.', 则dp[i][j]= dp[i][j-2]
-			若p[j-1]!=s[i],则dp[i][j] = dp[i][j-2]
+			若p[j-1]='.', 则dp[i][j]= dp[i][j-2] 注意：
+			若p[j-1]!=s[i],则dp[i][j] = dp[i][j-2] 注意：
 	3、初始化
 		dp[0][0]=true,最终的答案为dp[m][n]
 	4、遍历顺序
@@ -35,8 +36,10 @@ func isMatch(s string, p string) bool {
 		dp[i] = make([]bool, n+1)
 	}
 	dp[0][0] = true
+	// 遍历和更新
 	for i := 0; i <= m; i++ { // s字符串能为空串，所以从0开始
 		for j := 1; j <= n; j++ { // p字符串不能为空串，所以从1开始
+			// 这里简化了，不太好理解
 			if p[j-1] == '*' {
 				if i != 0 && (s[i-1] == p[j-2] || p[j-2] == '.') {
 					dp[i][j] = dp[i][j-2] || dp[i-1][j]
