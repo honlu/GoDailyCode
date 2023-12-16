@@ -14,15 +14,10 @@
 提醒：回溯、贪心、动态规划要多刷，很容易忘记理解。
 
 ### 第二阶段 [2022.11-12] Go数据结构，LeetCode
-- [x] Go36讲：Go语言核心36讲学习笔记 [已完成][一刷]
 - [x] LeetCode: 刷LeetCode [已完成][一刷CodeTop]  
-2022.12.20 Go36讲一刷结束。
 2022.12.23 CodeTop刷完117道。
 
-### 第三阶段 [2023.1 -] Go算法二刷，Go设计模式，Go高级函数
-- [x] GoQuestion: 并发或一些高级函数的使用(来源于interview-go(question),重点10之后,channel,sync(waitgroup,mutex),time,goroutine,内存逃逸)[初步完成]
-- [x] Go36讲: 二刷, Go常用内置包**fmt**,**io**,**bufio**,**sort**,**strconv**,**os**,**sync**,**flag**,encoding/json,html/template,**net/http**,reflect,**os/exec**,**strings,bytes**,log 测试用例 [初步完成]
-- [x] TestGo: 刘丹冰老师B站课代码、平常测试用到的相关代码、以及面试遇到的坑测试代码。[初步完成]
+### 第三阶段 [2023.1 -2023.4] Go算法二刷，Go设计模式，Go高级函数
 - [-] CodeCarl: 代码随想录二刷，补充一些细节(若是有机会再三刷，优化代码！)[暂停二刷]  
 (二刷，文件名改为LeetCode对应题目数，不再按照代码随想录数字顺序)
   - [x] Array: 数组专题(5道。重点：双指针法) [二刷完]
@@ -35,12 +30,14 @@
   - [x] BinaryTree: 二叉树专题(2023-1-30) [二刷完]
   - [x] BackTrack: 回溯专题 [二刷完]
   - [x] Greedy: 贪心专题(2023-2-22) [二刷完]
-  - [ ] DynamicProgramming: 动态规划[暂停]
 
-### 第四阶段 [计划中] Go设计模式、LeetCode个人收藏题、常见数据结构
+### 第四阶段 [2023.12-] 重温，补充Go设计模式、LeetCode个人收藏题、常见数据结构
+- [ ] CodeCarl: 代码随想录-重温 [在学习]
+- [ ] SwordOffer：剑指offer-重温 [在学习]
 - [ ] DesignPattern: 设计模式(单例、工厂) [在学习]
-- [ ] 回顾LeetCode个人收藏题：舒服区边缘的题 [在学习]
+- [ ] LeetCode：个人收藏题：舒服区边缘的题 [在学习]
 - [ ] DataStructure: 数据结构(LRU,堆，前缀树，(单or双向)链表，队列，栈，哈希表(必不可少));算法(广度优先搜索，深度优先搜索)  [在学习]
+- [ ] CrackingtheCodingInterview：程序员面试宝典 [暂时放放]
 
 注意：undo文件是未完成部分，待补. 
 
@@ -56,8 +53,13 @@
   * https://space.bilibili.com/373073810
 * 力扣(LeetCode)：https://leetcode.c
 * 剑指Offer(swordOffer):https://leetcode.cn/problem-list/xb9nqhhg/, https://leetcode.cn/problem-list/e8X3pBZi/
-* Go36讲：[Go语言核心36讲](https://time.geekbang.org/column/intro/100013101?code=YF69zjMN9upBt%2FgAwgwUikil2N2wiVvJ7XcyiRsLXU8%3D&source=app_share), [配套代码](https://github.com/hyper0x/Golang_Puzzlers)
+
 * 常用内置包(CommonPackage):http://c.biancheng.net/view/4306.html
 
 
-## 笔记目录（待整理）
+## 项目目录（整理）
+- CodeCarl:代码随想录
+- DataStructure:常用数据结构模板
+- DesignPattern:设计模式
+- LeetCode:个人收藏题(舒服区边缘的题)
+- CrackingTheCodingInterview:程序员面试宝典
