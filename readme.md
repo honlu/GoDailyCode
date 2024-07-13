@@ -1,4 +1,4 @@
-# 每日Code学习-MarkDown版
+# 每日Code学习-Markdown版
 每日是为了提醒自己学习！
 
 ## 目录介绍
