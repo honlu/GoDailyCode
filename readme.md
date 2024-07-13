@@ -1,4 +1,4 @@
-# 每日Code学习
+# 每日Code学习-MarkDown版
 每日是为了提醒自己学习！
 
 ## 目录介绍
@@ -32,14 +32,15 @@
   - [x] Greedy: 贪心专题(2023-2-22) [二刷完]
 
 ### 第四阶段 [2023.12-] 重温，补充Go设计模式、LeetCode个人收藏题、常见数据结构
-- [ ] CodeCarl: 代码随想录-重温 [在学习]
-  - [ ] 过往目录中文件名很随意，有按照leetcode题目标记的，有按照创建顺序标记的，现在慢慢梳理改成leetcode题目。
-- [ ] SwordOffer：剑指offer-重温 [在学习]
+- [ ] CrackingtheCodingInterview：程序员面试宝典 [在学习]
 - [ ] DesignPattern: 设计模式(单例、工厂) [在学习]
 - [ ] LeetCode：个人收藏题：舒服区边缘的题 [在学习]
 - [ ] DataStructure: 数据结构(LRU,堆，前缀树，(单or双向)链表，队列，栈，哈希表(必不可少));算法(广度优先搜索，深度优先搜索)  [在学习]
-- [ ] CrackingtheCodingInterview：程序员面试宝典 [暂时放放]
 
+### 规划第五阶段
+- [ ] CodeCarl: 代码随想录-重温 [暂停]
+  - [ ] 过往目录中文件名很随意，有按照leetcode题目标记的，有按照创建顺序标记的，现在慢慢梳理改成leetcode题目。
+- [ ] SwordOffer：剑指offer-重温 [暂停]
 注意：undo文件是未完成部分，待补. 
 
 
