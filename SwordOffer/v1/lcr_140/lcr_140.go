@@ -1,3 +1,5 @@
+package lcr140
+
 /*
 题目：训练计划2
 - https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/description/?envType=study-plan-v2&envId=coding-interviews
@@ -16,6 +18,11 @@
  *     Next *ListNode
  * }
  */
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 func trainingPlan(head *ListNode, cnt int) *ListNode {
 	// 双指针
 	temp, cur := head, head

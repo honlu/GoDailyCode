@@ -1,3 +1,5 @@
+package lcr142
+
 /*
 题目：训练计划iv
 - https://leetcode.cn/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/?envType=study-plan-v2&envId=coding-interviews
@@ -18,6 +20,12 @@
  *     Next *ListNode
  * }
  */
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
 func trainingPlanIV(l1 *ListNode, l2 *ListNode) *ListNode {
 	if l1 == nil {
 		return l2
