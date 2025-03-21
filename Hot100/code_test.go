@@ -6,6 +6,7 @@ import (
 	"testing"
 )
 
+// 题1的测试用例
 func TestTwoSum(t *testing.T) {
 	tests := []struct {
 		nums     []int
@@ -27,4 +28,53 @@ func TestTwoSum(t *testing.T) {
 			t.Logf("twoSum(%v, %d) passed", test.nums, test.target)
 		}
 	}
+}
+
+// 题2的测试用例
+func TestGroupAnagrams(t *testing.T) {
+	tests := []struct {
+		input    []string
+		expected [][]string
+	}{
+		{
+			input:    []string{"eat", "tea", "tan", "ate", "nat", "bat"},
+			expected: [][]string{{"eat", "tea", "ate"}, {"tan", "nat"}, {"bat"}},
+		},
+		{
+			input:    []string{""},
+			expected: [][]string{{""}},
+		},
+		{
+			input:    []string{"a"},
+			expected: [][]string{{"a"}},
+		},
+	}
+
+	for _, test := range tests {
+		result := groupAnagrams(test.input)
+		if !compareAnagramGroups(result, test.expected) {
+			t.Errorf("Test failed for input %v. Got %v, expected %v", test.input, result, test.expected)
+		} else {
+			t.Logf("Test passed for input %v", test.input)
+		}
+	}
+}
+
+func compareAnagramGroups(a, b [][]string) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for _, groupA := range a {
+		found := false
+		for _, groupB := range b {
+			if reflect.DeepEqual(groupA, groupB) {
+				found = true
+				break
+			}
+		}
+		if !found {
+			return false
+		}
+	}
+	return true
 }
