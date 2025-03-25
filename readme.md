@@ -12,6 +12,7 @@
 - LeetCode:个人收藏题
 - CrackingTheCodingInterview:程序员面试宝典
 - SwordOffer:剑指offer
+- Hot100:热门100题
 
 ## 参考
 代码用Go实现，思路来源主要包括
