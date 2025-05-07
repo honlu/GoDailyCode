@@ -4,5 +4,6 @@
         "plaintext": false,
         "markdown": false,
         "scminput": false
-    }
+    },
+    "editor.mouseWheelZoom": true
 }
