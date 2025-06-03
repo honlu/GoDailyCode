@@ -1,6 +1,6 @@
-pakcage hot100
+package hot100
 
-/* 
+/*
 41-二叉树的层次遍历
 https://leetcode.cn/problems/binary-tree-level-order-traversal/description/?envType=study-plan-v2&envId=top-100-liked
 */
