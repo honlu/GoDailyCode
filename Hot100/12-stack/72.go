@@ -18,7 +18,7 @@ package stack
 // }
 
 func dailyTemperatures(temperatures []int) []int {
-	// 单调栈，占中存元素的下标索引
+	// 单调栈，占中存元素的下标索引「占中存什么，怎么进栈、出栈是关键」
 	stack := []int{0}
 	count := len(temperatures)
 	answer := make([]int, count) // 默认为0，最后元素没出栈的就是0
