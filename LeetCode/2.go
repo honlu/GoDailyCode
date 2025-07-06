@@ -57,7 +57,8 @@ answer:
 // }
 
 /*
-思路：设置结果新链表的虚拟头节点
+类型：模拟题
+思路：设置结果新链表的虚拟头节点，注意有进位
 */
 /**
  * Definition for singly-linked list.
@@ -66,43 +67,65 @@ answer:
  *     Next *ListNode
  * }
  */
+// func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
+// 	// 链表逆序存储数字，结果先搞一个虚拟头指针
+// 	head := new(ListNode)
+// 	p := head
+// 	var flag int
+// 	for l1 != nil && l2 != nil {
+// 		sum := l1.Val + l2.Val + flag
+// 		flag = sum / 10
+// 		p.Next = &ListNode{
+// 			Val: sum % 10,
+// 		}
+// 		p = p.Next
+// 		l1 = l1.Next
+// 		l2 = l2.Next
+// 	}
+// 	for l1 != nil {
+// 		sum := l1.Val + flag
+// 		flag = sum / 10
+// 		p.Next = &ListNode{
+// 			Val: sum % 10,
+// 		}
+// 		p = p.Next
+// 		l1 = l1.Next
+// 	}
+// 	for l2 != nil {
+// 		sum := l2.Val + flag
+// 		flag = sum / 10
+// 		p.Next = &ListNode{
+// 			Val: sum % 10,
+// 		}
+// 		p = p.Next
+// 		l2 = l2.Next
+// 	}
+// 	if flag != 0 {
+// 		p.Next = &ListNode{
+// 			Val: flag,
+// 		}
+// 	}
+// 	return head.Next
+// }
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	// 链表逆序存储数字，结果先搞一个虚拟头指针
-	head := new(ListNode)
+	head := new(ListNode) // 虚拟头节点
 	p := head
-	var flag int
-	for l1 != nil && l2 != nil {
-		sum := l1.Val + l2.Val + flag
-		flag = sum / 10
+	var flag int // 进位
+	for l1 != nil || l2 != nil || flag != 0 {
+		if l1 != nil {
+			flag += l1.Val
+			l1 = l1.Next
+		}
+		if l2 != nil {
+			flag += l2.Val
+			l2 = l2.Next
+		}
 		p.Next = &ListNode{
-			Val: sum % 10,
+			Val: flag % 10,
 		}
 		p = p.Next
-		l1 = l1.Next
-		l2 = l2.Next
-	}
-	for l1 != nil {
-		sum := l1.Val + flag
-		flag = sum / 10
-		p.Next = &ListNode{
-			Val: sum % 10,
-		}
-		p = p.Next
-		l1 = l1.Next
-	}
-	for l2 != nil {
-		sum := l2.Val + flag
-		flag = sum / 10
-		p.Next = &ListNode{
-			Val: sum % 10,
-		}
-		p = p.Next
-		l2 = l2.Next
-	}
-	if flag != 0 {
-		p.Next = &ListNode{
-			Val: flag,
-		}
+		flag = flag / 10
 	}
 	return head.Next
 }
