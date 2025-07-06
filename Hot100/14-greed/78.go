@@ -20,3 +20,32 @@ func canJump(nums []int) bool {
 	}
 	return false
 }
+
+/*
+func canJump(nums []int) bool {
+    // 递归+记忆性（避免重复）
+    memo := make([]int, len(nums)) // 0: 未访问, 1: 可达, -1: 不可达
+
+    var dfs func(pos int) bool
+    dfs = func(pos int) bool {
+        if pos >= len(nums)-1 {
+            return true
+        }
+        if memo[pos] != 0 {
+            return memo[pos] == 1
+        }
+        maxJump := nums[pos]
+        for i := 1; i <= maxJump; i++ {
+            if dfs(pos + i) {
+                memo[pos] = 1
+                return true
+            }
+        }
+        memo[pos] = -1
+        return false
+    }
+
+    return dfs(0)
+}
+
+*/
