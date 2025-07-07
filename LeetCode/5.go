@@ -17,30 +17,65 @@ answer:
 	5、举例推导
 */
 
+// func longestPalindrome(s string) string {
+// 	// 用于保存结果
+// 	res := s[0:1]
+// 	// dp数组创建和初始化
+// 	dp := make([][]bool, len(s))
+// 	for i := 0; i < len(s); i++ {
+// 		dp[i] = make([]bool, len(s))
+// 		dp[i][i] = true // 长度为1的子串初始化,其他的默认为false
+// 	}
+// 	// 遍历
+// 	for i := 2; i <= len(s); i++ { // 固定子串的长度
+// 		for j := 0; j < len(s)-i+1; j++ { //
+// 			if s[j] != s[j+i-1] { // 如果首尾不同，则不可能为回文. j是子串的首部，j+i-1是子串的尾部
+// 				continue
+// 			} else if i < 3 {
+// 				dp[j][j+i-1] = true // 即长度为2的判断
+// 			} else { // 即s[j] = s[j+i-1]，首尾相同
+// 				dp[j][j+i-1] = dp[j+1][j+i-2] // 状态转移
+// 			}
+// 			if dp[j][j+i-1] && i > len(res) { // 记录最大值
+// 				res = s[j : j+i]
+// 			}
+// 		}
+// 	}
+// 	return res
+
+// }
+
+/*
+做法思路：
+1. 马拉车算法，类似KMP，做到O(n); 比较偏，只能做此题。
+2. 双指针+哈希算法，有点难。不太适合最开始讲，o(log(n))
+3. 比较简单做法：双指针解法
+*/
 func longestPalindrome(s string) string {
-	// 用于保存结果
-	res := s[0:1]
-	// dp数组创建和初始化
-	dp := make([][]bool, len(s))
-	for i := 0; i < len(s); i++ {
-		dp[i] = make([]bool, len(s))
-		dp[i][i] = true // 长度为1的子串初始化,其他的默认为false
-	}
-	// 遍历
-	for i := 2; i <= len(s); i++ { // 固定子串的长度
-		for j := 0; j < len(s)-i+1; j++ { //
-			if s[j] != s[j+i-1] { // 如果首尾不同，则不可能为回文. j是子串的首部，j+i-1是子串的尾部
-				continue
-			} else if i < 3 {
-				dp[j][j+i-1] = true // 即长度为2的判断
-			} else { // 即s[j] = s[j+i-1]，首尾相同
-				dp[j][j+i-1] = dp[j+1][j+i-2] // 状态转移
-			}
-			if dp[j][j+i-1] && i > len(res) { // 记录最大值
-				res = s[j : j+i]
+	var res string
+	var max int
+	// 双指针
+	for i, j := 0, 0; i < len(s); i++ {
+		for j := i; j < len(s); j++ {
+			if palindrome(s[i:j+1]) && (j+1-i > max) {
+				max = j + 1 - i
+				res = string(s[i : j+1])
 			}
 		}
 	}
 	return res
+}
 
+func palindrome(item []byte) bool {
+	if len(item) == 0 {
+		return false
+	}
+	for i, j := 0, len(item)-1; i < j; {
+		if item[i] != item[j] {
+			return false
+		}
+		i++
+		j--
+	}
+	return true
 }
