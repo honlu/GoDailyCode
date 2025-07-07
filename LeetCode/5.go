@@ -50,32 +50,63 @@ answer:
 1. 马拉车算法，类似KMP，做到O(n); 比较偏，只能做此题。
 2. 双指针+哈希算法，有点难。不太适合最开始讲，o(log(n))
 3. 比较简单做法：双指针解法
+4. 两层for循环（O(n^3)）「下面解法」
+*/
+// func longestPalindrome(s string) string {
+// 	var res string
+// 	var max int
+// 	// 暴力
+// 	for i, j := 0, 0; i < len(s); i++ {
+// 		for j := i; j < len(s); j++ {
+// 			if palindrome(s[i:j+1]) && (j+1-i > max) {
+// 				max = j + 1 - i
+// 				res = string(s[i : j+1])
+// 			}
+// 		}
+// 	}
+// 	return res
+// }
+
+// func palindrome(item []byte) bool {
+// 	if len(item) == 0 {
+// 		return false
+// 	}
+// 	for i, j := 0, len(item)-1; i < j; {
+// 		if item[i] != item[j] {
+// 			return false
+// 		}
+// 		i++
+// 		j--
+// 	}
+// 	return true
+// }
+
+/*
+思路：双指针法, 减少一层回文串的判断，降低时间复杂度
+假设从回文串的中心点，然后有左右两个指针、分别往左右走.
+O(n^2)
 */
 func longestPalindrome(s string) string {
 	var res string
-	var max int
-	// 双指针
-	for i, j := 0, 0; i < len(s); i++ {
-		for j := i; j < len(s); j++ {
-			if palindrome(s[i:j+1]) && (j+1-i > max) {
-				max = j + 1 - i
-				res = string(s[i : j+1])
-			}
+	for i := 0; i < len(s); i++ {
+		// 假设回文串为奇数串
+		l, r := i-1, i+1
+		for l >= 0 && r < len(s) && s[l] == s[r] {
+			l--
+			r++
+		}
+		if len(res) < r-1-l {
+			res = string(s[l+1 : r])
+		}
+		// 假设回文串为偶数串
+		l, r = i, i+1
+		for l >= 0 && r < len(s) && s[l] == s[r] {
+			l--
+			r++
+		}
+		if len(res) < r-1-l {
+			res = string(s[l+1 : r])
 		}
 	}
 	return res
-}
-
-func palindrome(item []byte) bool {
-	if len(item) == 0 {
-		return false
-	}
-	for i, j := 0, len(item)-1; i < j; {
-		if item[i] != item[j] {
-			return false
-		}
-		i++
-		j--
-	}
-	return true
 }
