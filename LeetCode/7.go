@@ -29,7 +29,7 @@ answer:
 // 		if res < math.MinInt32/10 || res > math.MaxInt32/10 { // 这个判断条件很精妙：只需要判断是否最小值小于min/10,最大值是否大于max/10,因为后面需要乘以10来更新
 // 			return 0
 // 		}
-// 		res = res*10 + x%10
+// 		res = res*10 + x%10 // go中负数%10是负数
 // 		x /= 10
 // 	}
 // 	return res
