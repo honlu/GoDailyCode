@@ -1,3 +1,5 @@
+package leetcode
+
 /*
 9. 回文数
 2023-3-16
@@ -11,17 +13,30 @@ answer:
 	方法一：整数转为字符串来解决！二分
 	方法二：将数字反转，然后对比两个数字是否相等
 */
-func isPalindrome(x int) bool {
-	// 转为字符串来解决
-	s := strconv.Itoa(x)
-	n := len(s)
-	for i := 0; i < n/2; i++ {
-		if s[i] != s[n-1-i] {
-			return false
-		}
-	}
-	return true
-}
+// func isPalindrome(x int) bool {
+// 	// 转为字符串来解决
+// 	s := strconv.Itoa(x)
+// 	n := len(s)
+// 	for i := 0; i < n/2; i++ {
+// 		if s[i] != s[n-1-i] {
+// 			return false
+// 		}
+// 	}
+// 	return true
+// }
+/*
+转为字符串
+*/
+// func isPalindrome(x int) bool {
+// 	// 字符串就可以
+// 	s := strconv.Itoa(x)
+// 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+// 		if s[i] != s[j] {
+// 			return false
+// 		}
+// 	}
+// 	return true
+// }
 
 // 方法二：数字反转
 func isPalindrome(x int) bool {
@@ -31,9 +46,8 @@ func isPalindrome(x int) bool {
 	temp := x
 	y := 0
 	for temp > 0 {
-		last := temp % 10
-		temp = temp / 10
-		y = y*10 + last
+		y = y*10 + temp%10
+		temp /= 10
 	}
 	return y == x
 }
