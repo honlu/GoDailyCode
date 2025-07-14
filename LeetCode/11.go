@@ -1,3 +1,5 @@
+package leetcode
+
 /*
 11. 盛最多水的容器
 2022-12-25
@@ -12,13 +14,40 @@ answer:
 	为了获取最大值，采用双指针。
 	i，j对应高度较小的那个先向内移动，不断计算面积，更新最大面积
 */
+// func maxArea(height []int) int {
+// 	var i, j int = 0, len(height) - 1
+// 	var res int = 0
+// 	for i < j {
+// 		small = min(height[i], height[j])
+// 		res = min(res, small*(j-i))
+// 		if small == height[i] {
+// 			i++
+// 		} else {
+// 			j--
+// 		}
+// 	}
+// 	return res
+// }
+
+// func min(a, b int) int {
+// 	if a > b {
+// 		return b
+// 	}
+// 	return a
+// }
+
+/*
+方程计算两点储水最大: max((j-i)*min(height[i],height[j]))
+双指针
+贪心优化
+*/
 func maxArea(height []int) int {
-	var i, j int = 0, len(height) - 1
-	var res int = 0
+	// 贪心、双指针
+	i, j := 0, len(height)-1
+	var res int
 	for i < j {
-		small = min(height[i], height[j])
-		res = min(res, small*(j-i))
-		if small == height[i] {
+		res = max(res, (j-i)*min(height[i], height[j]))
+		if height[i] < height[j] { // 贪心逻辑
 			i++
 		} else {
 			j--
@@ -28,8 +57,15 @@ func maxArea(height []int) int {
 }
 
 func min(a, b int) int {
-	if a > b {
-		return b
+	if a < b {
+		return a
 	}
-	return a
+	return b
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
 }
