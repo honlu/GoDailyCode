@@ -33,7 +33,11 @@ func romanToInt(s string) int {
 	// 从前后遍历，后面比当前大就减，比当前小或等于就+
 	var res int
 	for i := 0; i < len(s); i++ {
-
+		if i+1 < len(s) && hash[s[i]] < hash[s[i+1]] {
+			res -= hash[s[i]]
+		} else {
+			res += hash[s[i]]
+		}
 	}
 	return res
 }
