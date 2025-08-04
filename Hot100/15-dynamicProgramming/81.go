@@ -2,6 +2,7 @@ package dynamicprogramming
 
 /*
 80-70：爬楼梯
+https://leetcode.cn/problems/climbing-stairs/description/?envType=study-plan-v2&envId=top-100-liked
 */
 func climbStairs(n int) int {
 	// 规律公式：f(n) = f(n-1) + f(n-2)
