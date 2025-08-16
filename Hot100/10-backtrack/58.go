@@ -9,7 +9,8 @@ func combinationSum(candidates []int, target int) [][]int {
 	var path []int
 	var dfs func(target, index int)
 	count := len(candidates)
-	// 如何避免重复组合呢？就是必须有一个开始下标，确认下标，新的组合不能再还用前面的元素。
+	// 这样写法会有重复组合，如何避免重复组合呢？就是必须有一个开始下标，下标不能迁移
+	dfs = func(target, index int) {
 		if target == 0 {
 			res = append(res, append([]int{}, path...)) // 注意这里细节
 			return
