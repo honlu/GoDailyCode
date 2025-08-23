@@ -11,7 +11,7 @@ func topKFrequent(nums []int, k int) []int {
 	// 先统计每个元素出现频次，在排序
 	numMap := make(map[int]int)
 	items := []int{}
-	for i, _ := range nums {
+	for i := range nums {
 		item := nums[i]
 		if numMap[item] > 0 {
 			numMap[item]++
