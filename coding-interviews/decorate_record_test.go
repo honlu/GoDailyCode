@@ -6,48 +6,8 @@ import (
 	"testing"
 )
 
-// 构建二叉树的辅助函数
-func buildTree(vals []int) *TreeNode {
-	if len(vals) == 0 {
-		return nil
-	}
-
-	root := &TreeNode{Val: vals[0]}
-	queue := []*TreeNode{root}
-	i := 1
-
-	for len(queue) > 0 && i < len(vals) {
-		node := queue[0]
-		queue = queue[1:]
-
-		// 左子节点
-		if i < len(vals) {
-			if vals[i] != -1 { // -1 表示空节点
-				node.Left = &TreeNode{Val: vals[i]}
-				queue = append(queue, node.Left)
-			} else {
-				queue = append(queue, nil) // 添加nil占位符
-			}
-			i++
-		}
-
-		// 右子节点
-		if i < len(vals) {
-			if vals[i] != -1 { // -1 表示空节点
-				node.Right = &TreeNode{Val: vals[i]}
-				queue = append(queue, node.Right)
-			} else {
-				queue = append(queue, nil) // 添加nil占位符
-			}
-			i++
-		}
-	}
-
-	return root
-}
-
-// 测试decorateRecord函数
-func TestDecorateRecord(t *testing.T) {
+// 测试 levelOrder 函数（普通层序遍历）
+func TestLevelOrder(t *testing.T) {
 	tests := []struct {
 		name     string
 		input    []int // 层序遍历的数组，-1表示空节点
@@ -88,10 +48,10 @@ func TestDecorateRecord(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			root := buildTree(tt.input)
-			result := decorateRecord(root)
+			result := levelOrder(root)
 
 			if !reflect.DeepEqual(result, tt.expected) {
-				t.Errorf("decorateRecord() = %v, expected %v", result, tt.expected)
+				t.Errorf("levelOrder() = %v, expected %v", result, tt.expected)
 			} else {
 				t.Logf("✓ Test passed: %s", tt.name)
 			}
@@ -100,7 +60,7 @@ func TestDecorateRecord(t *testing.T) {
 }
 
 // 基准测试
-func BenchmarkDecorateRecord(b *testing.B) {
+func BenchmarkLevelOrder(b *testing.B) {
 	// 构建一个较大的树进行性能测试
 	vals := make([]int, 100)
 	for i := 0; i < 100; i++ {
@@ -110,12 +70,12 @@ func BenchmarkDecorateRecord(b *testing.B) {
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		decorateRecord(root)
+		levelOrder(root)
 	}
 }
 
 // 示例测试
-func ExampleDecorateRecord() {
+func ExamplelevelOrder() {
 	// 构建树: [3,9,20,null,null,15,7]
 	root := &TreeNode{
 		Val:  3,
@@ -127,7 +87,7 @@ func ExampleDecorateRecord() {
 		},
 	}
 
-	result := decorateRecord(root)
+	result := levelOrder(root)
 	fmt.Println(result)
 	// Output: [[3] [9 20] [15 7]]
 }

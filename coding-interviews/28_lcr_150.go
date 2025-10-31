@@ -1,6 +1,7 @@
 package main
 
-func decorateRecord(root *TreeNode) [][]int {
+// levelOrder LCR 150 - 层序遍历（从上到下打印二叉树）
+func levelOrder(root *TreeNode) [][]int {
 	// 层次遍历
 	var line []*TreeNode
 	var res [][]int
