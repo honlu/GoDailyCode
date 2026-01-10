@@ -4,20 +4,6 @@ import (
 	"testing"
 )
 
-// isSameTree 比较两棵树是否相同
-func isSameTree(p, q *TreeNode) bool {
-	if p == nil && q == nil {
-		return true
-	}
-	if p == nil || q == nil {
-		return false
-	}
-	if p.Val != q.Val {
-		return false
-	}
-	return isSameTree(p.Left, q.Left) && isSameTree(p.Right, q.Right)
-}
-
 func TestCodec(t *testing.T) {
 	tests := []struct {
 		name     string
