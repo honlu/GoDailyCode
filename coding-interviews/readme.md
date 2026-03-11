@@ -1,5 +1,6 @@
 # Interview 75
 https://leetcode.cn/studyplan/coding-interviews/
+推荐课程：https://www.icourse163.org/course/BUAA-1449777166
 
 以下是力扣 **Interview 75** 学习计划的完整题目清单（按模块分类）及对应链接，共 **75 题**。
 
