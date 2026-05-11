@@ -6,5 +6,5 @@
         "scminput": false
     },
     "editor.mouseWheelZoom": true,
-    "makefile.configureOnOpen": true
+    "makefile.configureOnOpen": true,
 }
