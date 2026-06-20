@@ -1,2 +1,5 @@
 .idea/
 .vscode/
+.claude/
+.codex/
+openspec/

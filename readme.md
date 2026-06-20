@@ -6,6 +6,10 @@
 
 
 ## 项目目录（整理）
+- problems: 逐步整理后的稳定题解目录（每题独立 package，优先可测试）
+- ds: 逐步整理后的数据结构目录
+- patterns: 逐步整理后的设计模式目录
+- archive: 后续存放完成迁移后的历史归档
 - CodeCarl:代码随想录
 - DataStructure:常用数据结构
 - DesignPattern:设计模式
@@ -13,6 +17,16 @@
 - CrackingTheCodingInterview:程序员面试宝典
 - SwordOffer:剑指offer
 - Hot100:热门100题
+
+说明：旧目录会继续保留原先学习记录；新目录用于后续稳定维护。当前已将历史题解、数据结构和设计模式镜像到 `problems/`、`ds/`、`patterns/`，其中 438 个默认稳定实现纳入测试；81 个历史原文仍以 `legacy` build tag 保留，其中 12 个目录暂无默认稳定实现；8 个未完成 LCR 题解以 `undo` build tag 保留。
+
+## 当前稳定检查
+
+```bash
+go test ./problems/... ./ds/... ./patterns/...
+go vet ./problems/... ./ds/... ./patterns/...
+go test ./coding-interviews
+```
 
 ## 参考
 代码用Go实现，思路来源主要包括
