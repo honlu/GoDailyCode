@@ -1,11 +1,5 @@
 package lcr124
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
 // reverseTreeNodes 反转 TreeNode 切片
 // 当多个题目需要使用此功能时，统一使用此函数避免重复代码
 func reverseTreeNodes(line []*TreeNode) {

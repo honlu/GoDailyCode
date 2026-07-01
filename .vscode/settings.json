@@ -7,4 +7,8 @@
     },
     "editor.mouseWheelZoom": true,
     "makefile.configureOnOpen": true,
+    "cSpell.words": [
+        "bytedance",
+        "nums"
+    ],
 }
