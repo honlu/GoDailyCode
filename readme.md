@@ -1,31 +1,27 @@
 # Go每日Code学习
 每日仅仅为了提醒自己学习, 不强求。
-2022年和2023年的记录看下面`学生期学习阶段`。  
+2022年和2023年的记录看下面`学生期学习阶段`。
 2024年梳理发现代码文件里的leetcode超链接对应题目已经改变。
 代码和内容暂时不改动啦，主要注意解题思路。
 
 
 ## 项目目录（整理）
-- problems: 逐步整理后的稳定题解目录（每题独立 package，优先可测试）
-- ds: 逐步整理后的数据结构目录
-- patterns: 逐步整理后的设计模式目录
-- archive: 后续存放完成迁移后的历史归档
-- CodeCarl:代码随想录
-- DataStructure:常用数据结构
-- DesignPattern:设计模式
-- LeetCode:个人收藏题
-- CrackingTheCodingInterview:程序员面试宝典
-- SwordOffer:剑指offer
-- Hot100:热门100题
 
-说明：旧目录会继续保留原先学习记录；新目录用于后续稳定维护。当前已将历史题解、数据结构和设计模式镜像到 `problems/`、`ds/`、`patterns/`，其中 438 个默认稳定实现纳入测试；81 个历史原文仍以 `legacy` build tag 保留，其中 12 个目录暂无默认稳定实现；8 个未完成 LCR 题解以 `undo` build tag 保留。
+- `problems/`：按题目分类的 Go 题解，包括代码随想录、CodeTop、Interview 75 / LCR、Hot100、LeetCode 和剑指 Offer。
+- `datastruct/`：LRU、排序等常用数据结构和算法。
+- `patterns/`：设计模式实现。
+- `systems/`：操作系统、缓存等系统知识记录。
+- `archive/`：迁移前的历史代码，仅作归档，不参与根模块的默认检查。
+
+历史题解已经逐步迁移到上述目录。可维护实现参与默认编译和测试；历史原文及未完成题解分别使用 `legacy`、`undo` build tag 保留。
 
 ## 当前稳定检查
 
 ```bash
 go test ./problems/... ./datastruct/... ./patterns/...
 go vet ./problems/... ./datastruct/... ./patterns/...
-go test ./coding-interviews
+# 或统一运行
+make check
 ```
 
 ## 参考
@@ -37,7 +33,7 @@ go test ./coding-interviews
 * 设计模式：
   * https://github.com/mohuishou/go-design-pattern
   * https://space.bilibili.com/373073810
-* 力扣(LeetCode)：https://leetcode.c
+* 力扣(LeetCode)：https://leetcode.cn/
 * 剑指Offer(swordOffer):https://leetcode.cn/problem-list/xb9nqhhg/, https://leetcode.cn/problem-list/e8X3pBZi/
   * 2024年发现剑指offer题单已经设为私密。
   * 论坛发现类似对应题单：https://leetcode.cn/studyplan/coding-interviews/
@@ -49,42 +45,42 @@ go test ./coding-interviews
 ### 第一阶段 [2022.9-2022.10] Go代码随想录、Go排序算法(CodeCarl，DataStructure)
 - [x] DataStructure/Sort: 个人准备的十大排序算法系列 [完成10个]
 - [x] CodeCarl/BinaryTree: 代码随想录的二叉树系列[已完成]
-- [x] CodeCarl/BackTrack: 代码随想录的回溯算法系列[已完成]  
+- [x] CodeCarl/BackTrack: 代码随想录的回溯算法系列[已完成]
 - [x] CodeCarl/Greedy: 代码随想录的贪心系列[已完成]
 - [x] CodeCarl/Stack: 代码随想录的单调栈系列[已完成]
-- [x] CodeCarl/DynamicProgramming: 代码随想录的动态规划系列[已完成]   
+- [x] CodeCarl/DynamicProgramming: 代码随想录的动态规划系列[已完成]
 梳理完成。开启下阶段任务。
-注意：代码随想录系列文件顺序尽力和网站章节同步，可能存在部分出入.  
+注意：代码随想录系列文件顺序尽力和网站章节同步，可能存在部分出入.
 提醒：回溯、贪心、动态规划要多刷，很容易忘记理解。
 
 ### 第二阶段 [2022.11-12] Go数据结构，LeetCode
-- [x] LeetCode: 刷LeetCode [已完成][一刷CodeTop]  
+- [x] LeetCode: 刷LeetCode [已完成][一刷CodeTop]
 CodeTop刷完117道。
 
 ### 第三阶段 [2023.1 -2023.4] Go算法二刷，Go设计模式，Go高级函数
-- [x] CodeCarl: 代码随想录二刷，补充一些细节(若是有机会再三刷，优化代码！)[暂停二刷]  
+- [x] CodeCarl: 代码随想录二刷，补充一些细节(若是有机会再三刷，优化代码！)[暂停二刷]
 (二刷，文件名改为LeetCode对应题目数，不再按照代码随想录数字顺序)
   - [x] CodeCarl/Array: 数组专题(5道。重点：双指针法) [二刷完]
   - [x] CodeCarl/LinkedList: 链表专题(7道。重点：链表的两种操作方式：直接在原来链表操作；设置虚拟头节点操作(重要)。) [二刷完]
   - [x] CodeCarl/Hash: 哈希表专题(重点：哈希表key存什么，value存什么) [二刷完]
   - [x] CodeCarl/Strings: 字符串专题(重点：strings包，以及双指针优化;字符串匹配KMP) [二刷完]
-  - [x] CodeCarl/DoublePoints: 双指针专题(包含的题目，在前面的专题已经做过，不再单独罗列)[二刷完]  
+  - [x] CodeCarl/DoublePoints: 双指针专题(包含的题目，在前面的专题已经做过，不再单独罗列)[二刷完]
   以下专题都一刷时保存过，知识文件名不是LeetCode顺序，二刷全部更改以及代码优化。
   - [x] CodeCarl/StackAndQueue: 栈与队列专题[二刷完]
   - [x] CodeCarl/BinaryTree: 二叉树专题 [二刷完]
   - [x] CodeCarl/BackTrack: 回溯专题 [二刷完]
   - [x] Greedy: 贪心专题 [二刷完]
 
-## 工作阶段  
+## 工作阶段
 
-下面是工作期间的一些刷题历史记录，保存当回忆，仅作参考。  
+下面是工作期间的一些刷题历史记录，保存当回忆，仅作参考。
 
 ## 第一阶段 [2025.3-9] Hot100
 - [x] Hot100: 开始刷hot100的题目
 
 ## 第二阶段 [2025.9-] Interview75
 - [ ] Interview75: 开始刷interview75的题目,https://leetcode.cn/studyplan/coding-interviews/
-  - [x] 相关Test测试用例, 参考TEST_README.md
+  - [x] 部分题解已添加 `_test.go` 测试用例
 
 推荐课程：
 - https://www.icourse163.org/course/BUAA-1449777166

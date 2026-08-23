@@ -58,7 +58,7 @@ func (l *LRU) get(key string) *Node {
 	for n := l.root.next; n != l.root; n = n.next { // 循环遍历双链表
 		if n.key == key { // 找到这个元素节点，要进行更新，移动到链表的头部
 			n.prev.next = n.next // 首先在链表中移除这个节点
-			n.next.prev = n.next
+			n.next.prev = n.prev
 
 			// 然后更新到链表的头部
 			n.next = l.root.next

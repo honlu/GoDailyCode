@@ -14,11 +14,10 @@
 - `leetcode/`：个人收藏题。
 - `code_carl/`：代码随想录题解。
 - `sword_offer/`：剑指 Offer。
-- `cracking_the_coding_interview/`：程序员面试宝典。
 
 迁移状态：
 
 - `coding_interviews/` 已迁移全部非 `_undo.go` 题解；未完成题解以 `undo` build tag 保留。
 - `code_carl/`、`hot100/`、`leetcode/`、`sword_offer/`、`cracking_the_coding_interview/` 已完成历史镜像迁移。
-- 当前新结构中已有 438 个默认稳定实现，81 个历史原文仍以 `legacy` build tag 保留。
-- 剩余 `legacy` 中只有 12 个目录暂无默认稳定实现，主要是旧测试拆分、设计模式拆分原文或依赖平台函数的题；后续可逐题整理后纳入稳定测试。
+- 默认实现参与 `go test ./problems/...`；尚未完成的题解和历史原文通过 build tag 保留。
+- 目前仍有较多 package 仅通过编译检查、没有独立测试，后续可随复习进度逐题补充。
