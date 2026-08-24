@@ -47,6 +47,7 @@ go test ./problems/coding_interviews/...
 - `lcr_157`
 - `lcr_158`
 - `lcr_159`
+- `lcr_160`
 - `lcr_161`
 - `lcr_163`
 - `lcr_164`
