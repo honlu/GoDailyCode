@@ -54,6 +54,7 @@ go test ./problems/coding_interviews/...
 - `lcr_165`
 - `lcr_166`
 - `lcr_167`
+- `lcr_168`
 - `lcr_170`
 - `lcr_174`
 - `lcr_175`
