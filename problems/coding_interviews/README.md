@@ -30,6 +30,7 @@ go test ./problems/coding_interviews/...
 - `lcr_127`
 - `lcr_129`
 - `lcr_130`
+- `lcr_131`
 - `lcr_133`
 - `lcr_134`
 - `lcr_135`
