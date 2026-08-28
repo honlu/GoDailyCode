@@ -63,6 +63,7 @@ go test ./problems/coding_interviews/...
 - `lcr_177`
 - `lcr_178`
 - `lcr_180`
+- `lcr_185`
 - `lcr_186`
 - `lcr_188`
 - `lcr_189`
