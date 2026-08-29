@@ -51,6 +51,7 @@ go test ./problems/coding_interviews/...
 - `lcr_159`
 - `lcr_160`
 - `lcr_161`
+- `lcr_162`
 - `lcr_163`
 - `lcr_164`
 - `lcr_165`
@@ -72,3 +73,5 @@ go test ./problems/coding_interviews/...
 - `lcr_190`
 - `lcr_191`
 - `lcr_194`
+
+重点需要关注：3、131、132、160、162、168、170、185、187
